@@ -1,2 +1,2 @@
 # Kartik-portfolio
-Creating Ny personal Website.
+Creating My personal Website.
