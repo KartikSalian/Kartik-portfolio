@@ -39,13 +39,32 @@
                 <div class="text-center mb-5">
                     <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
                 </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                <div class="row gx-5">
+                    <!-- Sticky Sidebar TOC -->
+                    <div class="col-lg-3 d-none d-lg-block">
+                        <div style="position:sticky;top:90px;">
+                            <div class="card shadow border-0 rounded-4 p-4">
+                                <p class="text-uppercase fw-bolder small text-muted mb-3" style="letter-spacing:0.08em;">On this page</p>
+                                <nav class="d-flex flex-column gap-2">
+                                    <a href="#experience" class="text-decoration-none fw-semibold text-primary d-flex align-items-center gap-2">
+                                        <i class="bi bi-briefcase-fill"></i> Experience
+                                    </a>
+                                    <a href="#education" class="text-decoration-none fw-semibold text-secondary d-flex align-items-center gap-2">
+                                        <i class="bi bi-mortarboard-fill"></i> Education
+                                    </a>
+                                    <a href="#skills" class="text-decoration-none fw-semibold text-secondary d-flex align-items-center gap-2">
+                                        <i class="bi bi-tools"></i> Skills
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Main Content -->
+                    <div class="col-lg-9">
                         <!-- Experience Section-->
-                        <section>
+                        <section id="experience">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                               
                             </div>
                             <!-- University of Galway - Research Assistant -->
                             <div class="card shadow border-0 rounded-4 mb-5">
@@ -184,7 +203,7 @@
 
                         </section>
                         <!-- Education Section-->
-                        <section>
+                        <section id="education">
                             <h2 class="text-secondary fw-bolder mb-4">Education</h2>
                             <!-- Education Card 1-->
                             <div class="card shadow border-0 rounded-4 mb-5">
@@ -234,7 +253,7 @@
                         <!-- Divider-->
                         <div class="pb-5"></div>
             <!-- Skills Section -->
-<section>
+<section id="skills">
     <div class="card shadow border-0 rounded-4 mb-5">
         <div class="card-body p-5">
             <!-- Core Skills -->
@@ -323,6 +342,8 @@
 </section>
 
             </div>
+        </div>
+        </div>
         </div>
         </main>
 
