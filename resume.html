@@ -17,6 +17,13 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style>
+            @keyframes fadeSlideIn {
+                from { opacity: 0; transform: translateY(22px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            main { animation: fadeSlideIn 0.55s ease both; }
+        </style>
+        <style>
             /* ── Mobile TOC — horizontal scrollable bar ── */
             #mobileTOC {
                 display: none;
