@@ -16,6 +16,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            @media (max-width: 768px) {
+                .card-body.p-0 .p-5 { padding: 1.25rem !important; }
+                .container.px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
+                .card .img-fluid { max-width: 100% !important; height: 180px; object-fit: cover; }
+            }
+        </style>
     </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
@@ -47,7 +54,7 @@
                             <!-- Project: DocChat RAG Chatbot -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center flex-column flex-md-row">
                                         <div class="p-5">
                                             <h2 class="fw-bolder">DocChat — RAG-Powered Document Chatbot</h2>
                                             <p>Built a full-stack Retrieval-Augmented Generation (RAG) chatbot that lets users upload PDF documents and ask questions about them in natural language. Uses FAISS vector search to retrieve relevant chunks and Groq's LLaMA 3.1 API for fast, accurate answers. Deployed on Streamlit Cloud with a custom dark UI.</p>
@@ -57,7 +64,7 @@
                                                 <a href="https://github.com/KartikSalian/DocChat" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
                                             </div>
                                         </div>
-                                        <img class="img-fluid" src="assets/docchat.png" alt="DocChat RAG Chatbot" style="width:220px;height:180px;object-fit:cover;flex-shrink:0;" />
+                                        <img class="img-fluid" src="assets/docchat.png" alt="DocChat RAG Chatbot" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +72,7 @@
                             <!-- Project: Dairy ESG Tracker -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center flex-column flex-md-row">
                                         <div class="p-5">
                                             <h2 class="fw-bolder">Dairy ESG Tracker — Sustainability Analytics Dashboard</h2>
                                             <p>Designed and built a board-ready ESG analytics dashboard for the Irish dairy industry, inspired by Ornua/Kerrygold sustainability reporting. Visualises GHG emissions, milk production, land use efficiency, and net-zero 2050 progress using real FAOSTAT data. Features a Nexus-style dark sidebar UI with interactive Plotly charts including donuts, bar charts, and scatter plots.</p>
@@ -75,7 +82,7 @@
                                                 <a href="https://github.com/KartikSalian/dairy-esg-tracker" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
                                             </div>
                                         </div>
-                                        <img class="img-fluid" src="assets/esg_dashboard.png" alt="Dairy ESG Tracker" style="width:220px;height:180px;object-fit:cover;flex-shrink:0;" />
+                                        <img class="img-fluid" src="assets/esg_dashboard.png" alt="Dairy ESG Tracker" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +90,7 @@
                             <!-- Project 1: Financial News Sentiment Analysis -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center flex-column flex-md-row">
                                         <div class="p-5">
                                             <h2 class="fw-bolder">Financial News Sentiment Analysis</h2>
                                             <p>Built a sentiment analysis system using Logistic Regression, SVM, and Random Forest models, achieving 81% accuracy in classifying financial news sentiment.</p>
@@ -100,7 +107,7 @@
                             <!-- Project 2: Sales Analytics Dashboard -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center flex-column flex-md-row">
                                         <div class="p-5">
                                             <h2 class="fw-bolder">Sales Analytics Dashboard (Power BI & Python)</h2>
                                             <p>Developed an interactive Power BI dashboard using Python for data cleaning and transformation. Utilized DAX for calculated columns and measures to analyze profit, sales growth, and discount impact.</p>
@@ -117,7 +124,7 @@
                             <!-- Project 3: Phishing Email Detection System -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center flex-column flex-md-row">
                                         <div class="p-5">
                                             <h2 class="fw-bolder">Phishing Email Detection System</h2>
                                             <p>Developed a hybrid BERT model with engineered features that detects phishing emails with 94% accuracy, reducing false positives by 32% compared to traditional methods.</p>
@@ -134,7 +141,7 @@
                             <!-- Project 4: Football Match Outcome & Score Prediction -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center flex-column flex-md-row">
                                         <div class="p-5">
                                             <h2 class="fw-bolder">Football Match Outcome & Score Prediction</h2>
                                             <p>Performed in-depth exploratory data analysis and engineered key performance metrics (e.g., PPDA, xG difference, goal differential) to understand team strengths and match dynamics. Engineered performance metrics and trained XGBoost models, achieving 98.46% accuracy in predicting home wins.</p>
