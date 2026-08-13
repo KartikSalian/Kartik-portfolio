@@ -1,0 +1,377 @@
+/* Modern 3D redesign — scoped to .theme-3d so nothing outside these pages changes. */
+
+.theme-3d {
+    --bg-deep: #060714;
+    --bg-panel: rgba(255, 255, 255, 0.06);
+    --bg-panel-hover: rgba(255, 255, 255, 0.1);
+    --border-glass: rgba(255, 255, 255, 0.14);
+    --text-hero: #f5f7ff;
+    --text-hero-muted: #a7aec4;
+    --accent-blue: #5b7cff;
+    --accent-pink: #ff3d9a;
+    --tile-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.65);
+    --tile-shadow-hover: 0 30px 60px -20px rgba(0, 0, 0, 0.75);
+    position: relative;
+    background-color: var(--bg-deep);
+    color: var(--text-hero-muted);
+}
+
+/* Fixed color wash behind the whole page (not just the hero) — this is what
+   the glass tiles actually blur. Without it, backdrop-filter has nothing
+   but flat color behind it and the "glass" is invisible. Fixed so it stays
+   put as tiles scroll past, like light through real frosted glass. */
+.theme-3d::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    background:
+        radial-gradient(circle at 10% 8%, rgba(91, 124, 255, 0.2), transparent 34%),
+        radial-gradient(circle at 90% 12%, rgba(255, 61, 154, 0.16), transparent 36%),
+        radial-gradient(circle at 15% 55%, rgba(255, 61, 154, 0.13), transparent 38%),
+        radial-gradient(circle at 85% 65%, rgba(91, 124, 255, 0.16), transparent 38%),
+        radial-gradient(circle at 45% 95%, rgba(91, 124, 255, 0.12), transparent 40%);
+}
+
+.theme-3d p,
+.theme-3d li {
+    color: var(--text-hero-muted);
+}
+
+.theme-3d strong {
+    color: var(--text-hero);
+}
+
+.theme-3d h1,
+.theme-3d h2,
+.theme-3d h3,
+.theme-3d h4,
+.theme-3d h5,
+.theme-3d h6 {
+    color: var(--text-hero);
+}
+
+.theme-3d a:not(.btn) {
+    color: var(--accent-blue);
+}
+
+.theme-3d a:not(.btn):hover {
+    color: var(--accent-pink);
+}
+
+.theme-3d .text-muted {
+    color: var(--text-hero-muted) !important;
+}
+
+.theme-3d .text-primary {
+    color: var(--accent-blue) !important;
+}
+
+.theme-3d .text-secondary {
+    color: var(--accent-pink) !important;
+}
+
+.theme-3d .text-gradient {
+    background-image: linear-gradient(92deg, var(--accent-blue), var(--accent-pink));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Navbar */
+.theme-3d .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(6, 7, 20, 0.55) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-3d .navbar.is-scrolled {
+    border-bottom-color: var(--border-glass);
+}
+
+.theme-3d .navbar-brand span,
+.theme-3d .navbar-nav .nav-link {
+    color: var(--text-hero) !important;
+}
+
+.theme-3d .navbar-nav .nav-link {
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.theme-3d .navbar-nav .nav-link:hover {
+    opacity: 1;
+}
+
+.theme-3d .navbar-toggler {
+    border-color: var(--border-glass);
+    filter: invert(1);
+}
+
+/* Hero (home page — full height with 3D canvas) */
+.theme-3d .hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 3rem;
+    isolation: isolate;
+}
+
+.theme-3d .hero::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10%;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(91, 124, 255, 0.28), transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(255, 61, 154, 0.22), transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(91, 124, 255, 0.12), transparent 55%);
+    z-index: -2;
+}
+
+.hero-3d-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-3d-bg canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.theme-3d .hero-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-glass);
+    color: var(--text-hero-muted);
+    backdrop-filter: blur(8px);
+}
+
+.theme-3d .hero p.lead {
+    color: var(--text-hero-muted) !important;
+}
+
+/* Compact page header (inner pages — gradient mesh, no canvas) */
+.theme-3d .page-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0 2.75rem;
+    isolation: isolate;
+}
+
+.theme-3d .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: -60% -10%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(91, 124, 255, 0.26), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 61, 154, 0.2), transparent 50%);
+    z-index: -1;
+}
+
+.theme-3d .page-hero-sub {
+    color: var(--text-hero-muted);
+}
+
+/* Buttons */
+.theme-3d .btn-primary {
+    background: linear-gradient(92deg, var(--accent-blue), var(--accent-pink));
+    border: none;
+    box-shadow: 0 12px 30px -12px rgba(91, 124, 255, 0.55);
+}
+
+.theme-3d .btn-outline-primary {
+    color: var(--accent-blue);
+    border-color: var(--border-glass);
+}
+
+.theme-3d .btn-outline-primary:hover {
+    background: var(--bg-panel);
+    color: var(--text-hero);
+    border-color: var(--accent-blue);
+}
+
+.theme-3d .btn-outline-dark {
+    color: var(--text-hero);
+    border-color: var(--border-glass);
+}
+
+.theme-3d .btn-outline-dark:hover {
+    background: var(--bg-panel);
+    color: var(--text-hero);
+    border-color: var(--accent-blue);
+}
+
+.theme-3d .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tiles — frosted-glass surfaces shared by the profile frame, About cards,
+   and the Bootstrap .card used on Resume/Projects/Contact. Apple-style:
+   hairline border, soft diffused shadow, gentle lift on hover — no
+   gradient borders, no perspective tilt. */
+.tilt-card,
+.about-card,
+.theme-3d .card,
+.theme-3d .resume-entry {
+    position: relative;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    box-shadow: var(--tile-shadow) !important;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        background 0.3s ease;
+}
+
+.tilt-card:hover,
+.about-card:hover,
+.theme-3d .card:hover,
+.theme-3d .resume-entry:hover {
+    transform: translateY(-6px);
+    background: var(--bg-panel-hover);
+    box-shadow: var(--tile-shadow-hover) !important;
+}
+
+.theme-3d .card,
+.theme-3d .resume-entry {
+    color: var(--text-hero-muted);
+}
+
+/* Project screenshots: frame them in a padded, rounded inset instead of
+   letting the (often white-background) image sit flush against the glass
+   card edge as a harsh cutout. */
+.theme-3d .card .img-fluid {
+    border-radius: 14px;
+    margin: 1.25rem;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+.profile-frame {
+    width: min(360px, 78vw);
+    aspect-ratio: 1 / 1;
+    margin-inline: auto;
+    border-radius: 28px;
+    padding: 1.25rem;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* About section (home page) */
+.theme-3d .about-section {
+    position: relative;
+    border-top: 1px solid var(--border-glass);
+}
+
+.theme-3d .about-section .about-intro {
+    color: var(--text-hero-muted);
+}
+
+.about-card {
+    padding: 1.75rem;
+    height: 100%;
+    color: var(--text-hero-muted);
+}
+
+.about-card .about-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(91, 124, 255, 0.16);
+    color: var(--accent-blue);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.about-card h3 {
+    color: var(--text-hero);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.theme-3d .open-to-strip {
+    color: var(--text-hero);
+    background: var(--bg-panel);
+    border: 1px solid var(--border-glass);
+    border-radius: 20px;
+    padding: 1.1rem 1.5rem;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+.theme-3d .open-to-strip strong {
+    background-image: linear-gradient(92deg, var(--accent-blue), var(--accent-pink));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-3d .bg-light {
+    background-color: var(--bg-panel) !important;
+    border: 1px solid var(--border-glass);
+    color: var(--text-hero-muted);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+
+.theme-3d .list-group-item {
+    background-color: var(--bg-panel);
+    border-color: var(--border-glass);
+    color: var(--text-hero-muted);
+}
+
+.theme-3d footer {
+    background: rgba(6, 7, 20, 0.55) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid var(--border-glass);
+    color: var(--text-hero-muted);
+}
+
+.theme-3d footer a {
+    color: var(--text-hero-muted) !important;
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .tilt-card {
+        transition: none;
+    }
+}
