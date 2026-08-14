@@ -9,8 +9,11 @@
     --text-hero-muted: #a7aec4;
     --accent-blue: #5b7cff;
     --accent-pink: #ff3d9a;
-    --tile-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.65);
-    --tile-shadow-hover: 0 30px 60px -20px rgba(0, 0, 0, 0.75);
+    --tile-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -14px 20px -16px rgba(0, 0, 0, 0.4),
+        0 20px 45px -20px rgba(0, 0, 0, 0.65);
+    --tile-shadow-hover: inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 0 -14px 20px -16px rgba(0, 0, 0, 0.45),
+        0 30px 60px -20px rgba(0, 0, 0, 0.75);
+    --tile-sheen: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 32%, transparent 58%);
     position: relative;
     background-color: var(--bg-deep);
     color: var(--text-hero-muted);
@@ -219,13 +222,17 @@
 /* Tiles — frosted-glass surfaces shared by the profile frame, About cards,
    and the Bootstrap .card used on Resume/Projects/Contact. Apple-style:
    hairline border, soft diffused shadow, gentle lift on hover — no
-   gradient borders, no perspective tilt. */
+   gradient borders, no perspective tilt. The diagonal sheen (the specular
+   highlight that sells "glass" over "frosted plastic") is a second
+   background layer, not a ::before overlay — backgrounds always paint
+   behind all content, so no z-index juggling is needed to keep tile text
+   readable regardless of each tile's internal markup. */
 .tilt-card,
 .about-card,
 .theme-3d .card,
 .theme-3d .resume-entry {
     position: relative;
-    background: var(--bg-panel);
+    background: var(--tile-sheen), var(--bg-panel);
     border: 1px solid var(--border-glass);
     border-radius: 20px;
     backdrop-filter: blur(24px) saturate(180%);
@@ -240,8 +247,37 @@
 .theme-3d .card:hover,
 .theme-3d .resume-entry:hover {
     transform: translateY(-6px);
-    background: var(--bg-panel-hover);
+    background: var(--tile-sheen), var(--bg-panel-hover);
     box-shadow: var(--tile-shadow-hover) !important;
+}
+
+/* Real glass refraction — bends the backdrop behind an element, like light
+   through glass. Deliberately reserved for the handful of one-off "hero"
+   surfaces (About cards, the profile frame, the open-to strip, the
+   footer) rather than every tile: chaining three SVG filter primitives
+   (feTurbulence, feGaussianBlur, feDisplacementMap) through backdrop-filter
+   forces a recomposite wherever the element moves on screen, and the
+   Projects/Resume grids can have 9–10 tiles in view at once — the same
+   per-frame cost that rules out the sticky navbar, just multiplied. Those
+   repeated tiles keep the plain blur + sheen above, which already reads as
+   glass on its own.
+   Double-gated on purpose: @supports alone only confirms the url()
+   syntax parses, not that a browser actually renders an SVG filter
+   through backdrop-filter (Safari has historically been inconsistent
+   here) — that residual gap isn't fully closable from CSS alone. The
+   "liquid-glass" class closes the other gap: it's added only after
+   js/effects.js successfully injects the filter, so a blocked or failed
+   script leaves every surface on its always-safe plain blur instead of
+   risking an unresolved url() reference invalidating backdrop-filter
+   entirely. */
+@supports (backdrop-filter: url(#liquid-glass-distortion)) {
+    html.liquid-glass .about-card,
+    html.liquid-glass .profile-frame,
+    html.liquid-glass .theme-3d .open-to-strip,
+    html.liquid-glass .theme-3d footer {
+        backdrop-filter: url(#liquid-glass-distortion) blur(20px) saturate(180%);
+        -webkit-backdrop-filter: url(#liquid-glass-distortion) blur(20px) saturate(180%);
+    }
 }
 
 .theme-3d .card,
