@@ -1306,6 +1306,32 @@
 .tl-item.is-edu .tl-role,
 .tl-item.is-edu .tl-more { color: #fff; }
 
+/* Current role: pulsing peach ring on the marker */
+.tl-item.is-current .tl-node {
+    background: var(--peach);
+    color: var(--ink);
+}
+
+.tl-item.is-current .tl-node::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--peach);
+    animation: live-pulse 1.8s ease-out infinite;
+}
+
+.tl-item.is-current .tl-type {
+    background: var(--peach);
+    color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tl-item.is-current .tl-node::after {
+        animation: none;
+    }
+}
+
 /* Mobile: line on the left, all tiles on the right */
 @media (max-width: 767.98px) {
     .timeline::before {
@@ -1592,6 +1618,48 @@ html.tl-dialog-open {
     color: var(--ink);
     font-size: 0.83rem;
     font-weight: 500;
+}
+
+/* Certifications strip */
+.sk-certs {
+    padding: 1.6rem 1.75rem;
+    border-radius: 32px;
+    background: var(--bg-panel);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: var(--tile-shadow);
+}
+
+.theme-3d .sk-certs-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.sk-cert-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sk-cert-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid rgba(var(--ink-rgb), 0.1);
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.sk-cert-list span::before {
+    content: "\2713";
+    color: #e8906e;
+    font-weight: 700;
 }
 
 /* "Using in my current role" marker */

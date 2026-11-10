@@ -27,9 +27,9 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css?v=20261110" rel="stylesheet" />
+        <link href="css/styles.css?v=20261110b" rel="stylesheet" />
         <!-- Modern 3D redesign (scoped to .theme-3d)-->
-        <link href="css/custom-3d.css?v=20261110" rel="stylesheet" />
+        <link href="css/custom-3d.css?v=20261110b" rel="stylesheet" />
         <style>
             @keyframes fadeSlideIn {
                 from { opacity: 0; transform: translateY(22px); }
@@ -117,8 +117,8 @@
                             <div class="pj-body">
                                 <div class="pj-tags"><span class="pj-tag">GenAI · RAG</span></div>
                                 <h3 class="pj-title">DocChat — RAG-Powered Document Chatbot</h3>
-                                <p class="pj-desc">Built a full-stack Retrieval-Augmented Generation (RAG) chatbot that lets users upload PDF documents and ask questions about them in natural language. Uses FAISS vector search to retrieve relevant chunks and Groq's LLaMA 3.1 API for fast, accurate answers. Deployed on Streamlit Cloud with a custom dark UI.</p>
-                                <div class="pj-tools"><span>Python</span><span>LangChain</span><span>FAISS</span><span>sentence-transformers (all-MiniLM-L6-v2)</span><span>Groq API (LLaMA 3.1)</span><span>Streamlit</span><span>PyPDF2</span></div>
+                                <p class="pj-desc">Built a full-stack Retrieval-Augmented Generation (RAG) chatbot that lets users upload PDF documents and ask questions about them in natural language. Uses FAISS vector search with custom chunking and retrieval, and Groq's LLaMA 3.1 API for fast, accurate answers. Includes a multi-layer prompt-injection detection and OWASP Top 10 for LLMs security layer. Deployed as a live public Streamlit app.</p>
+                                <div class="pj-tools"><span>Python</span><span>LangChain</span><span>FAISS</span><span>Prompt-injection detection</span><span>sentence-transformers (all-MiniLM-L6-v2)</span><span>Groq API (LLaMA 3.1)</span><span>Streamlit</span><span>PyPDF2</span></div>
                                 <div class="pj-actions">
                                     <a href="https://docchat-one.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live demo <i class="bi bi-box-arrow-up-right ms-1"></i></a>
                                     <a href="https://github.com/KartikSalian/DocChat" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
@@ -175,6 +175,8 @@
                             <div class="pj-extra" hidden>
                                 <p class="tl-detail-label">Key KPIs</p>
                                 <p>Attrition rate by department/tenure/age, gender balance, absence risk scoring, starter &amp; leaver trends, compensation by grade.</p>
+                                <p class="tl-detail-label mt-3">Deliverables</p>
+                                <p>Three-page Power BI dashboard, a full data dictionary, and an executive narrative report.</p>
                             </div>
                         </article>
 
@@ -310,10 +312,10 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js?v=20261110"></script>
+        <script src="js/scripts.js?v=20261110b"></script>
         <!-- 3D page-header scene + interaction effects-->
-        <script type="module" src="js/hero-scene.js?v=20261110"></script>
-        <script src="js/effects.js?v=20261110" defer></script>
-        <script src="js/projects.js?v=20261110" defer></script>
+        <script type="module" src="js/hero-scene.js?v=20261110b"></script>
+        <script src="js/effects.js?v=20261110b" defer></script>
+        <script src="js/projects.js?v=20261110b" defer></script>
     </body>
 </html>
