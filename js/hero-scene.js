@@ -24,9 +24,9 @@ function wireMesh(geometry, color, opacity) {
 // Cricket bat: cylindrical handle + flattened paddle blade.
 function createCricketBat() {
     const group = new THREE.Group();
-    const blade = wireMesh(new THREE.BoxGeometry(0.16, 0.42, 0.05), 0x5b7cff, 0.6);
+    const blade = wireMesh(new THREE.BoxGeometry(0.16, 0.42, 0.05), 0x3f4c9a, 0.8);
     blade.position.y = 0.06;
-    const handle = wireMesh(new THREE.CylinderGeometry(0.035, 0.035, 0.26, 6), 0x5b7cff, 0.6);
+    const handle = wireMesh(new THREE.CylinderGeometry(0.035, 0.035, 0.26, 6), 0x3f4c9a, 0.8);
     handle.position.y = 0.4;
     group.add(blade, handle);
     return group;
@@ -42,13 +42,13 @@ function createWickets() {
     const group = new THREE.Group();
     const stumpGeo = new THREE.CylinderGeometry(0.012, 0.012, 0.32, 6);
     [-0.055, 0, 0.055].forEach((x) => {
-        const stump = wireMesh(stumpGeo, 0xff3d9a, 0.6);
+        const stump = wireMesh(stumpGeo, 0xffffff, 0.85);
         stump.position.set(x, 0, 0);
         group.add(stump);
     });
     const bailGeo = new THREE.CylinderGeometry(0.008, 0.008, 0.07, 6);
     [-0.0275, 0.0275].forEach((x) => {
-        const bail = wireMesh(bailGeo, 0xff3d9a, 0.6);
+        const bail = wireMesh(bailGeo, 0xffffff, 0.85);
         bail.rotation.z = Math.PI / 2;
         bail.position.set(x, 0.17, 0);
         group.add(bail);
@@ -61,11 +61,11 @@ function createGloves() {
     const group = new THREE.Group();
     const fingerGeo = new THREE.CylinderGeometry(0.014, 0.014, 0.08, 5);
     [-0.11, 0.11].forEach((x) => {
-        const palm = wireMesh(new THREE.BoxGeometry(0.14, 0.18, 0.05), 0x5b7cff, 0.6);
+        const palm = wireMesh(new THREE.BoxGeometry(0.14, 0.18, 0.05), 0x3f4c9a, 0.8);
         palm.position.set(x, 0, 0);
         group.add(palm);
         [-0.04, 0, 0.04].forEach((fx) => {
-            const finger = wireMesh(fingerGeo, 0x5b7cff, 0.6);
+            const finger = wireMesh(fingerGeo, 0x3f4c9a, 0.8);
             finger.position.set(x + fx, 0.13, 0);
             group.add(finger);
         });
@@ -94,13 +94,13 @@ if (canvas && !prefersReducedMotion) {
         const icoGeometry = new THREE.IcosahedronGeometry(2.3, 1);
         const icoWireframe = new THREE.LineSegments(
             new THREE.WireframeGeometry(icoGeometry),
-            new THREE.LineBasicMaterial({ color: 0x5b7cff, transparent: true, opacity: 0.55 })
+            new THREE.LineBasicMaterial({ color: 0x3f4c9a, transparent: true, opacity: 0.75 })
         );
         group.add(icoWireframe);
 
         const torus = new THREE.Mesh(
-            new THREE.TorusGeometry(3.3, 0.015, 8, 120),
-            new THREE.MeshBasicMaterial({ color: 0xff3d9a, transparent: true, opacity: 0.5 })
+            new THREE.TorusGeometry(3.3, 0.03, 8, 160),
+            new THREE.MeshBasicMaterial({ color: 0xf5b69e, transparent: true, opacity: 0.95 })
         );
         torus.rotation.x = Math.PI / 2.6;
         torus.rotation.y = Math.PI / 6;
@@ -114,8 +114,8 @@ if (canvas && !prefersReducedMotion) {
 
     const hobbyIconFactories = [
         createCricketBat,
-        () => createBall(0xff3d9a, 0.12), // cricket ball
-        () => createBall(0x5b7cff, 0.17), // football
+        () => createBall(0xf5b69e, 0.12), // cricket ball (peach accent)
+        () => createBall(0x3f4c9a, 0.17), // football
         createWickets,
         createGloves,
     ];
@@ -138,9 +138,9 @@ if (canvas && !prefersReducedMotion) {
             comet = new THREE.LineSegments(
                 new THREE.WireframeGeometry(baseGeometry),
                 new THREE.LineBasicMaterial({
-                    color: i % 2 === 0 ? 0x5b7cff : 0xff3d9a,
+                    color: [0x3f4c9a, 0xf5b69e, 0xffffff][i % 3],
                     transparent: true,
-                    opacity: 0.45 + Math.random() * 0.35,
+                    opacity: 0.65 + Math.random() * 0.3,
                 })
             );
             scale = 0.14 + Math.random() * 0.24;
@@ -194,9 +194,9 @@ if (canvas && !prefersReducedMotion) {
     particleGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     const particleMaterial = new THREE.PointsMaterial({
         color: 0xffffff,
-        size: 0.03,
+        size: 0.045,
         transparent: true,
-        opacity: 0.55,
+        opacity: 0.85,
     });
     const particles = new THREE.Points(particleGeometry, particleMaterial);
     scene.add(particles);

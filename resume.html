@@ -23,9 +23,9 @@
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
         <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <!-- Modern 3D redesign (scoped to .theme-3d)-->
@@ -38,56 +38,7 @@
             main { animation: fadeSlideIn 0.55s ease both; }
         </style>
         <style>
-            /* ── Mobile TOC — horizontal scrollable bar ──
-               Sits just below the sticky glass navbar (73px tall), not at
-               top:0, otherwise it covers the navbar entirely and the
-               hamburger menu becomes unreachable on mobile. */
-            #mobileTOC {
-                display: none;
-                position: fixed;
-                top: 73px;
-                left: 0;
-                right: 0;
-                z-index: 30;
-                background: #060714;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding: 0.5rem 1rem;
-                gap: 0.75rem;
-                overflow-x: auto;
-                white-space: nowrap;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            }
             @media (max-width: 991px) {
-                .page-hero { padding-top: calc(4rem + 49px) !important; }
-            }
-            #mobileTOC a {
-                color: #5b7cff;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 0.85rem;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.3rem;
-                padding: 0.3rem 0.7rem;
-                border-radius: 999px;
-                border: 1px solid #5b7cff;
-                transition: all 0.2s;
-            }
-            #mobileTOC a.active,
-            #mobileTOC a:hover {
-                background: #ff3d9a;
-                border-color: #ff3d9a;
-                color: #fff;
-            }
-            @media (max-width: 991px) {
-                #mobileTOC { display: flex; }
-                /* Stack experience/education rows on mobile */
-                .resume-entry .row { flex-direction: column !important; }
-                .resume-entry .col.text-center { width: 100% !important; }
-                .resume-entry .col-lg-8 { width: 100% !important; }
-                /* Reduce padding on cards */
-                .card-body.p-5 { padding: 1.5rem !important; }
-                /* Reduce container padding */
                 .container.px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
             }
         </style>
@@ -97,7 +48,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">My Journey in Data</span></a>
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Kartik Salian</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
@@ -109,29 +60,6 @@
                     </div>
                 </div>
             </nav>
-            <!-- Mobile TOC bar (shown only on small screens) -->
-            <div id="mobileTOC">
-                <a href="#experience" class="mobile-toc-link"><i class="bi bi-briefcase-fill"></i> Experience</a>
-                <a href="#education" class="mobile-toc-link"><i class="bi bi-mortarboard-fill"></i> Education</a>
-                <a href="#skills" class="mobile-toc-link"><i class="bi bi-tools"></i> Skills</a>
-            </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const sections = ['experience','education','skills'];
-                    const mobileLinks = document.querySelectorAll('.mobile-toc-link');
-                    window.addEventListener('scroll', function() {
-                        let current = '';
-                        sections.forEach(id => {
-                            const el = document.getElementById(id);
-                            if (el && window.scrollY >= el.offsetTop - 120) current = id;
-                        });
-                        mobileLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-                        });
-                    });
-                });
-            </script>
 
             <!-- Page Header-->
             <header class="page-hero">
@@ -146,357 +74,324 @@
                 <div class="open-to-strip text-center mb-5">
                     Prefer a PDF copy of this? <a href="contact.html">Get in touch</a> and I'll send one over.
                 </div>
-                <div class="row gx-5">
-                    <!-- Sticky Sidebar TOC -->
-                    <div class="col-lg-3 d-none d-lg-block">
-                        <div style="position:sticky;top:90px;">
-                            <div class="card tilt-card shadow border-0 rounded-4 p-4">
-                                <p class="text-uppercase fw-bolder small text-muted mb-3" style="letter-spacing:0.08em;">On this page</p>
-                                <nav class="d-flex flex-column gap-2" id="resumeTOC">
-                                    <a href="#experience" class="toc-link text-decoration-none fw-semibold d-flex align-items-center gap-2">
-                                        <i class="bi bi-briefcase-fill"></i> Experience
-                                    </a>
-                                    <a href="#education" class="toc-link text-decoration-none fw-semibold d-flex align-items-center gap-2">
-                                        <i class="bi bi-mortarboard-fill"></i> Education
-                                    </a>
-                                    <a href="#skills" class="toc-link text-decoration-none fw-semibold d-flex align-items-center gap-2">
-                                        <i class="bi bi-tools"></i> Skills
-                                    </a>
-                                </nav>
-                                <style>
-                                    .toc-link { color: #5b7cff; transition: color 0.2s; }
-                                    .toc-link:hover { color: #ff3d9a; }
-                                    .toc-link.active { color: #ff3d9a; font-weight: 800 !important; }
-                                </style>
-                                <script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        const sections = ['experience','education','skills'];
-                                        const links = document.querySelectorAll('.toc-link');
-                                        window.addEventListener('scroll', function() {
-                                            let current = '';
-                                            sections.forEach(id => {
-                                                const el = document.getElementById(id);
-                                                if (el && window.scrollY >= el.offsetTop - 120) current = id;
-                                            });
-                                            links.forEach(link => {
-                                                link.classList.remove('active');
-                                                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-                                            });
-                                        });
-                                    });
-                                </script>
+                <!-- Journey timeline -->
+                <section id="journey" class="mb-5">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bolder mb-3">My Journey</h2>
+                        <div class="tl-legend">
+                            <span class="tl-legend-item is-work"><i></i>Work</span>
+                            <span class="tl-legend-item is-part"><i></i>Part-time</span>
+                            <span class="tl-legend-item is-edu"><i></i>Education</span>
+                        </div>
+                        <p class="small mt-3 mb-0">Click any tile to see the details.</p>
+                    </div>
+
+                    <ol class="timeline">
+                        <!-- University of Galway — Data Scientist -->
+                        <li class="tl-item is-work reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Full-time</span>
+                                <span class="tl-date">Jul 2025 – Present</span>
+                                <span class="tl-role">Data Scientist / Research Assistant</span>
+                                <span class="tl-org">University of Galway · Galway, Ireland</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <ul>
+                                    <li>Built an end-to-end data platform ingesting real-time IoT sensor data (soil, temperature) and generating 7-day forward forecasts of growing conditions using ML models and external weather API integration.</li>
+                                    <li>Designed ML pipelines for anomaly detection and pattern extraction from large-scale heterogeneous sensor datasets, applying Isolation Forest and seasonal quantile modelling.</li>
+                                    <li>Developed a decision support system that translates complex model outputs into plain-language, actionable guidance — bridging the gap between technical ML results and non-technical end users.</li>
+                                    <li>Integrated an AI-powered natural language interface enabling users to query operational data conversationally, improving accessibility and adoption of data-driven tools.</li>
+                                    <li>Delivered interactive, mobile-responsive dashboards with uncertainty bands, event markers, and dynamic visualisations using Plotly and Python.</li>
+                                    <li>Implemented a human-in-the-loop validation layer to enforce safety and compliance checks before AI outputs were surfaced to operational users, ensuring responsible AI deployment.</li>
+                                    <li>Produced technical documentation, architecture diagrams, and reports for both academic and industry stakeholders.</li>
+                                    <li>Applied Agile/Scrum methodologies to manage project delivery, facilitated sprint planning, maintained a prioritised backlog of research and development tasks, and coordinated regular review sessions with academic and industry stakeholders to align on requirements and progress.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Vodafone -->
+                        <li class="tl-item is-work reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Full-time</span>
+                                <span class="tl-date">Aug 2023 – Feb 2025</span>
+                                <span class="tl-role">Data Analyst</span>
+                                <span class="tl-org">Vodafone · Dublin, Ireland</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <ul>
+                                    <li>Designed and deployed dashboards, reports, and automated insights pipelines for operational optimization.</li>
+                                    <li>Built scalable data workflows and contributed to predictive systems supporting business-critical decisions.</li>
+                                    <li>Collaborated cross-functionally to uncover data-driven strategies across customer experience, churn, and marketing analytics.</li>
+                                    <li>Productionized machine learning models for anomaly detection and reporting automation in cloud environments.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Menlo Park Hotel -->
+                        <li class="tl-item is-part reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-shop"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Part-time</span>
+                                <span class="tl-date">May 2023 – Aug 2023</span>
+                                <span class="tl-role">Accommodation Assistant</span>
+                                <span class="tl-org">Menlo Park Hotel · Galway, Ireland</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <ul>
+                                    <li>Delivered consistent hospitality services with a focus on guest satisfaction and room readiness.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Lafayette Graduation Services -->
+                        <li class="tl-item is-part reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-shop"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Part-time</span>
+                                <span class="tl-date">Mar 2023</span>
+                                <span class="tl-role">Graduation Assistant</span>
+                                <span class="tl-org">Lafayette Graduation Services · Galway, Ireland</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <ul>
+                                    <li>Facilitated event support and client engagement during university ceremonies with a customer-first approach.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Dunnes Stores -->
+                        <li class="tl-item is-part reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-shop"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Part-time</span>
+                                <span class="tl-date">Nov 2022 – Jan 2023</span>
+                                <span class="tl-role">Sales Assistant</span>
+                                <span class="tl-org">Dunnes Stores · Galway, Ireland</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <ul>
+                                    <li>Contributed to retail operations through daily inventory management and customer service.</li>
+                                    <li>Delivered product insights that informed store-level merchandising decisions.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- MSc — University of Galway -->
+                        <li class="tl-item is-edu reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Education</span>
+                                <span class="tl-date">2022 – 2023</span>
+                                <span class="tl-role">Master's, Computer Science (Data Analytics)</span>
+                                <span class="tl-org">University of Galway · Galway, Ireland</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <p class="tl-detail-label">Related modules</p>
+                                <div class="tl-chips">
+                                    <span>Machine Learning</span><span>Deep Learning</span><span>NLP</span><span>Image Processing</span><span>Data Visualization</span><span>R</span><span>Knowledge Graphs</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- JK Holidaymakers -->
+                        <li class="tl-item is-work reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Internship</span>
+                                <span class="tl-date">Aug 2021 – Mar 2022</span>
+                                <span class="tl-role">Data Analyst Intern</span>
+                                <span class="tl-org">JK Holidaymakers Pvt Ltd · Mumbai, India</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <ul>
+                                    <li>Built Excel dashboards to monitor daily and monthly KPIs including fleet utilisation, booking volumes, revenue and customer feedback.</li>
+                                    <li>Automated booking performance reporting using Excel formulas and VBA, reducing reporting time by 25%.</li>
+                                    <li>Developed pricing models in Excel to evaluate cost-effectiveness by vehicle type and route, contributing to an 18% improvement in service punctuality.</li>
+                                    <li>Created PowerPoint reports and presented findings to senior management to support strategic decision-making.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Devlance -->
+                        <li class="tl-item is-work reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Internship</span>
+                                <span class="tl-date">May 2021 – Jun 2021</span>
+                                <span class="tl-role">Data Analyst Intern</span>
+                                <span class="tl-org">Devlance · Delhi (Remote), India</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <ul>
+                                    <li>Performed statistical analysis and built analytical models to support compensation benchmarking.</li>
+                                    <li>Developed intuitive visual summaries to assist stakeholders in data interpretation and strategy planning.</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- BE — Fr. CRCE -->
+                        <li class="tl-item is-edu reveal">
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
+                            <button type="button" class="tl-card" aria-haspopup="dialog">
+                                <span class="tl-type">Education</span>
+                                <span class="tl-date">2018 – 2022</span>
+                                <span class="tl-role">Undergraduate, Electronics Engineering</span>
+                                <span class="tl-org">Fr. Conceicao Rodrigues College of Engineering · Mumbai, India</span>
+                                <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
+                            </button>
+                            <div class="tl-details" hidden>
+                                <p class="tl-detail-label">Related modules</p>
+                                <div class="tl-chips">
+                                    <span>Neural Networks</span><span>Digital Signal Processing</span><span>Object-Oriented Programming</span><span>DBMS</span><span>C</span><span>AutoCAD</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Details popup (filled by js/timeline.js) -->
+                <dialog class="tl-dialog" id="tlDialog" aria-labelledby="tlDialogTitle">
+                    <div class="tl-dialog-head">
+                        <div class="d-flex justify-content-between align-items-start gap-3">
+                            <span class="tl-type" data-slot="type"></span>
+                            <button type="button" class="tl-close" aria-label="Close details"><i class="bi bi-x-lg"></i></button>
+                        </div>
+                        <div class="tl-date" data-slot="date"></div>
+                        <h3 class="tl-dialog-title" id="tlDialogTitle" data-slot="role"></h3>
+                        <div class="tl-org" data-slot="org"></div>
+                    </div>
+                    <div class="tl-dialog-body" data-slot="body"></div>
+                </dialog>
+
+                <div class="pb-4"></div>
+            <!-- Skills Section -->
+                <!-- Skills -->
+                <section id="skills" class="mb-5">
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bolder mb-3">Skills &amp; Toolkit</h2>
+                        <div class="tl-legend">
+                            <span class="tl-legend-item"><i class="sk-now-dot"></i>Using in my current role</span>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="sk-langs mb-4">
+                        <span class="sk-lang is-now"><i class="bi bi-filetype-py"></i>Python</span>
+                        <span class="sk-lang"><i class="bi bi-database"></i>SQL</span>
+                        <span class="sk-lang"><i class="bi bi-bar-chart-line"></i>R</span>
+                        <span class="sk-lang"><i class="bi bi-cup-hot"></i>Java</span>
+                        <span class="sk-lang"><i class="bi bi-file-earmark-spreadsheet"></i>Excel / VBA</span>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-cpu"></i></span><h3>Machine Learning</h3></div>
+                                <div class="sk-chips">
+                                    <span class="is-now">Time-series forecasting</span>
+                                    <span class="is-now">Anomaly detection</span>
+                                    <span class="is-now">Isolation Forest</span>
+                                    <span>Scikit-learn</span>
+                                    <span>XGBoost</span>
+                                    <span>LightGBM</span>
+                                    <span>PyTorch</span>
+                                    <span>CNN-LSTM</span>
+                                    <span>Churn prediction</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-chat-square-text"></i></span><h3>GenAI, LLMs &amp; NLP</h3></div>
+                                <div class="sk-chips">
+                                    <span class="is-now">LLM interfaces</span>
+                                    <span class="is-now">Human-in-the-loop AI</span>
+                                    <span>RAG</span>
+                                    <span>LangChain</span>
+                                    <span>FAISS</span>
+                                    <span>Hugging Face Transformers</span>
+                                    <span>FinBERT</span>
+                                    <span>Sentence-transformers</span>
+                                    <span>Groq API (LLaMA 3.1)</span>
+                                    <span>TF-IDF</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-diagram-3"></i></span><h3>Data Engineering &amp; Cloud</h3></div>
+                                <div class="sk-chips">
+                                    <span class="is-now">IoT sensor pipelines</span>
+                                    <span class="is-now">Weather / REST APIs</span>
+                                    <span>ETL &amp; data workflows</span>
+                                    <span>BigQuery</span>
+                                    <span>Spark / Hadoop</span>
+                                    <span>GCP</span>
+                                    <span>AWS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-pie-chart"></i></span><h3>Analytics, BI &amp; Visualisation</h3></div>
+                                <div class="sk-chips">
+                                    <span class="is-now">Plotly</span>
+                                    <span class="is-now">Interactive dashboards</span>
+                                    <span>Power BI</span>
+                                    <span>DAX</span>
+                                    <span>Power Query</span>
+                                    <span>Looker Studio</span>
+                                    <span>Streamlit</span>
+                                    <span>Matplotlib / Seaborn</span>
+                                    <span>Pandas / NumPy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-rocket-takeoff"></i></span><h3>MLOps &amp; Deployment</h3></div>
+                                <div class="sk-chips">
+                                    <span>FastAPI</span>
+                                    <span>Docker</span>
+                                    <span>Kubernetes</span>
+                                    <span>Prometheus</span>
+                                    <span>Git</span>
+                                    <span>REST APIs</span>
+                                    <span>Cloud ML deployment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-people"></i></span><h3>Ways of Working</h3></div>
+                                <div class="sk-chips">
+                                    <span class="is-now">Agile / Scrum</span>
+                                    <span class="is-now">Decision-support design</span>
+                                    <span class="is-now">Technical documentation</span>
+                                    <span class="is-now">Stakeholder communication</span>
+                                    <span>Cross-functional collaboration</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Main Content -->
-                    <div class="col-lg-9">
-                        <!-- Experience Section-->
-                        <section id="experience">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                            </div>
-                            <!-- University of Galway - Research Assistant -->
-                            <div class="resume-entry mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-start gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">Jul 2025 – Present</div>
-                                                <div class="small fw-bolder">Data Scientist / Research Assistant</div>
-                                                <div class="small text-muted">University of Galway</div>
-                                                <div class="small text-muted">Galway, Ireland</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <ul class="mb-0">
-                                                <li>Built an end-to-end data platform ingesting real-time IoT sensor data (soil, temperature) and generating 7-day forward forecasts of growing conditions using ML models and external weather API integration.</li>
-                                                <li>Designed ML pipelines for anomaly detection and pattern extraction from large-scale heterogeneous sensor datasets, applying Isolation Forest and seasonal quantile modelling.</li>
-                                                <li>Developed a decision support system that translates complex model outputs into plain-language, actionable guidance — bridging the gap between technical ML results and non-technical end users.</li>
-                                                <li>Integrated an AI-powered natural language interface enabling users to query operational data conversationally, improving accessibility and adoption of data-driven tools.</li>
-                                                <li>Delivered interactive, mobile-responsive dashboards with uncertainty bands, event markers, and dynamic visualisations using Plotly and Python.</li>
-                                                <li>Implemented a human-in-the-loop validation layer to enforce safety and compliance checks before AI outputs were surfaced to operational users, ensuring responsible AI deployment.</li>
-                                                <li>Produced technical documentation, architecture diagrams, and reports for both academic and industry stakeholders.</li>
-                                                <li>Applied Agile/Scrum methodologies to manage project delivery, facilitated sprint planning, maintained a prioritised backlog of research and development tasks, and coordinated regular review sessions with academic and industry stakeholders to align on requirements and progress.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Vodafone-->
-                            <div class="resume-entry mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-start gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">Aug 2023 - Feb 2025</div>
-                                                <div class="small fw-bolder">Data Analyst</div>
-                                                <div class="small text-muted">Vodafone</div>
-                                                <div class="small text-muted">Dublin, Ireland</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <ul class="mb-0">
-                                                <li>Designed and deployed dashboards, reports, and automated insights pipelines for operational optimization.</li>
-                                                <li>Built scalable data workflows and contributed to predictive systems supporting business-critical decisions.</li>
-                                                <li>Collaborated cross-functionally to uncover data-driven strategies across customer experience, churn, and marketing analytics.</li>
-                                                <li>Productionized machine learning models for anomaly detection and reporting automation in cloud environments.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JK Holidaymakers -->
-                            <div class="resume-entry mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-start gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">Aug 2021 – Mar 2022</div>
-                                                <div class="small fw-bolder">Data Analyst Intern</div>
-                                                <div class="small text-muted">JK Holidaymakers Pvt Ltd</div>
-                                                <div class="small text-muted">Mumbai, India</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <ul class="mb-0">
-                                                <li>Built Excel dashboards to monitor daily and monthly KPIs including fleet utilisation, booking volumes, revenue and customer feedback.</li>
-                                                <li>Automated booking performance reporting using Excel formulas and VBA, reducing reporting time by 25%.</li>
-                                                <li>Developed pricing models in Excel to evaluate cost-effectiveness by vehicle type and route, contributing to an 18% improvement in service punctuality.</li>
-                                                <li>Created PowerPoint reports and presented findings to senior management to support strategic decision-making.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Devlance-->
-                            <div class="resume-entry mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-start gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">May 2021 - Jun 2021</div>
-                                                <div class="small fw-bolder">Data Analyst Intern</div>
-                                                <div class="small text-muted">Devlance</div>
-                                                <div class="small text-muted">Delhi(Remote), India</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <ul class="mb-0">
-                                                <li>Performed statistical analysis and built analytical models to support compensation benchmarking.</li>
-                                                <li>Developed intuitive visual summaries to assist stakeholders in data interpretation and strategy planning.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Dunnes Store -->
-    <div class="resume-entry mb-5">
-        <div class="card-body p-5">
-            <div class="row align-items-start gx-5">
-                <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                    <div class="bg-light p-4 rounded-4">
-                        <div class="text-primary fw-bolder mb-2">Nov 2022 - Jan 2023</div>
-                        <div class="small fw-bolder">Sales Assistant</div>
-                        <div class="small text-muted">Dunnes Stores</div>
-                        <div class="small text-muted">Galway, Ireland</div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <ul class="mb-0">
-                        <li>Contributed to retail operations through daily inventory management and customer service.</li>
-                        <li>Delivered product insights that informed store-level merchandising decisions.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Menlo Park Hotel -->
-    <div class="resume-entry mb-5">
-        <div class="card-body p-5">
-            <div class="row align-items-start gx-5">
-                <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                    <div class="bg-light p-4 rounded-4">
-                        <div class="text-primary fw-bolder mb-2">May 2023 - Aug 2023</div>
-                        <div class="small fw-bolder">Accommodation Assistant</div>
-                        <div class="small text-muted">Menlo Park Hotel</div>
-                        <div class="small text-muted">Galway, Ireland</div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <ul class="mb-0">
-                        <li>Delivered consistent hospitality services with a focus on guest satisfaction and room readiness.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lafayette Graduation Services -->
-    <div class="resume-entry mb-5">
-        <div class="card-body p-5">
-            <div class="row align-items-start gx-5">
-                <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                    <div class="bg-light p-4 rounded-4">
-                        <div class="text-primary fw-bolder mb-2">Mar 2023</div>
-                        <div class="small fw-bolder">Graduation Assistant</div>
-                        <div class="small text-muted">Lafayette Graduation Services</div>
-                        <div class="small text-muted">Galway, Ireland</div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <ul class="mb-0">
-                        <li>Facilitated event support and client engagement during university ceremonies with a customer-first approach.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                        </section>
-                        <!-- Education Section-->
-                        <section id="education">
-                            <h2 class="text-secondary fw-bolder mb-4">Education</h2>
-                            <!-- Education Card 1-->
-                            <div class="resume-entry mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-start gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">2022 - 2023</div>
-                                                <div class="mb-2">
-                                                    <div class="small fw-bolder">University Of Galway</div>
-                                                    <div class="small text-muted">Galway, Ireland</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Master's</div>
-                                                    <div class="small text-muted">Computer Science</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div> Related Modules: Machine Learning, Deep Learning, NLP, Image Processing, Data Visualization, R language and
-                                            Knowledge Graph.</div></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Education Card 2-->
-                            <div class="resume-entry mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-start gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-secondary fw-bolder mb-2">2018 - 2022</div>
-                                                <div class="mb-2">
-                                                    <div class="small fw-bolder">Fr. Conceicao Rodrigues College of Engineering</div>
-                                                    <div class="small text-muted">Mumbai, India</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Undergraduate</div>
-                                                    <div class="small text-muted">Electronics Engineering</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8"><div> Related Modules: AutoCAD, Neural networks, Digital signal processing,Object oriented programming, DBMS
-                                            and C.</div></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <!-- Divider-->
-                        <div class="pb-5"></div>
-            <!-- Skills Section -->
-<section id="skills">
-    <div class="card tilt-card shadow border-0 rounded-4 mb-5">
-        <div class="card-body p-5">
-            <!-- Core Skills -->
-            <div class="mb-5">
-                <div class="d-flex align-items-center mb-4">
-                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
-                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Core Skills</span></h3>
-                </div>
-                <div class="row row-cols-1 row-cols-md-3 mb-4">
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Data Analysis & Visualization</div>
-                    </div>
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Machine Learning & Predictive Modelling</div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">AI / LLM Application Development</div>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-md-3 mb-4">
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Data Engineering & Pipelines</div>
-                    </div>
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Dashboard & Reporting Design</div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Business Intelligence & Stakeholder Communication</div>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Anomaly Detection & IoT Data Analysis</div>
-                    </div>
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">RAG & NLP Systems</div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Cloud Platforms (GCP / AWS)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Languages & Tools -->
-            <div class="mb-0">
-                <div class="d-flex align-items-center mb-4">
-                    <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
-                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages & Tools</span></h3>
-                </div>
-                <div class="row row-cols-1 row-cols-md-3 mb-4">
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div>
-                    </div>
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">SQL</div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">R</div>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-md-3 mb-4">
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">LangChain · FAISS · Groq API</div>
-                    </div>
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Streamlit · Plotly · Power BI</div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Scikit-learn · XGBoost · PyTorch</div>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">FastAPI · REST APIs</div>
-                    </div>
-                    <div class="col mb-4 mb-md-0">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Git · Docker · Kubernetes</div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Spark / Hadoop</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                </section>
 
             </div>
-        </div>
-        </div>
-        </div>
         </main>
 
         <!-- Call to action section-->
@@ -510,16 +405,15 @@
         </section>
 
         <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
+        <footer class="py-4 mt-auto">
             <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Kartik Salian 2025</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                <div class="site-footer">
+                    <div class="small m-0">&copy; <span class="js-year">2026</span> Kartik Salian</div>
+                    <div class="footer-links small">
+                        <a href="https://github.com/KartikSalian" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://linkedin.com/in/kartik-salian-445038184" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#" class="to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
                     </div>
                 </div>
             </div>
@@ -529,6 +423,7 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- 3D page-header scene + interaction effects-->
+        <script src="js/timeline.js" defer></script>
         <script type="module" src="js/hero-scene.js"></script>
         <script src="js/effects.js" defer></script>
     </body>

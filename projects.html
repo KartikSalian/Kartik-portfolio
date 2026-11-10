@@ -23,9 +23,9 @@
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
         <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <!-- Modern 3D redesign (scoped to .theme-3d)-->
@@ -37,20 +37,13 @@
             }
             main { animation: fadeSlideIn 0.55s ease both; }
         </style>
-        <style>
-            @media (max-width: 768px) {
-                .card-body.p-0 .p-5 { padding: 1.25rem !important; }
-                .container.px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
-                .card .img-fluid { max-width: 100% !important; height: 180px; object-fit: cover; }
-            }
-        </style>
     </head>
     <body class="d-flex flex-column h-100 theme-3d">
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">My Portfolio</span></a>
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Kartik Salian</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
@@ -72,216 +65,221 @@
                 </div>
             </header>
 
-            <!-- Projects Section-->
+            <!-- Projects -->
             <section class="py-5">
-                <div class="container px-5 mb-5">
-                    <!-- Filter Buttons -->
+                <div class="container px-5 mb-4">
+                    <!-- Filter capsule -->
                     <div class="text-center mb-5">
-                        <div class="btn-group" role="group">
-                            <button class="btn btn-primary px-4" onclick="filterProjects('all')" id="btn-all">All</button>
-                            <button class="btn btn-outline-primary px-4" onclick="filterProjects('analytics')" id="btn-analytics">Data Analytics</button>
-                            <button class="btn btn-outline-primary px-4" onclick="filterProjects('ml')" id="btn-ml">ML &amp; AI</button>
+                        <div class="pj-filter" role="group" aria-label="Filter projects">
+                            <button type="button" class="is-active" data-filter="all">All <span class="pj-count"></span></button>
+                            <button type="button" data-filter="analytics">Analytics &amp; BI <span class="pj-count"></span></button>
+                            <button type="button" data-filter="ml">ML &amp; AI <span class="pj-count"></span></button>
+                            <button type="button" data-filter="live"><span class="pj-live-dot" aria-hidden="true"></span>Live demos <span class="pj-count"></span></button>
                         </div>
+                        <p class="small mt-3 mb-0">Click any project for the full story.</p>
                     </div>
 
-                    <!-- Section 1: Data Analytics & Dashboards -->
-                    <div class="row gx-5 justify-content-center" id="section-analytics">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <h2 class="fw-bolder mb-4" style="border-bottom: 3px solid #0d6efd; padding-bottom: 0.5rem;">Data Analytics &amp; Dashboards</h2>
-
-                            <!-- Project: HR Workforce Analytics Dashboard -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">HR Workforce Analytics Dashboard</h2>
-                                            <p>Built an end-to-end HR analytics project using the IBM HR Attrition Dataset (1,470 employees). Developed a Python data pipeline for cleaning, quality assurance, and KPI computation — producing 17 metric tables covering attrition, tenure, diversity, absence risk, and compensation. Visualised insights in a 3-page Power BI dashboard with DAX measures, traffic light indicators, and drill-through by department.</p>
-                                            <p><strong>Tools Used:</strong> Python (Pandas, NumPy), Power BI, DAX, Power Query, IBM HR Dataset.</p>
-                                            <p><strong>Key KPIs:</strong> Attrition rate by department/tenure/age, gender balance, absence risk scoring, starter &amp; leaver trends, compensation by grade.</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/hr-analytics-dashboard" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="https://raw.githubusercontent.com/KartikSalian/hr-analytics-dashboard/main/screenshots/Page1.png" alt="HR Workforce Analytics Dashboard" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
-                                    </div>
+                    <div class="pj-grid">
+                        <!-- FEATURED: ML Day Trading System -->
+                        <article class="pj-card is-featured" data-cat="ml">
+                            <div class="pj-media">
+                                <img src="assets/ml-stockmarketimage.png" alt="ML Day Trading System" loading="lazy" />
+                                <span class="pj-badge"><span class="pj-live-dot" aria-hidden="true"></span>Paper testing</span>
+                            </div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Featured</span><span class="pj-tag">Machine Learning</span></div>
+                                <h3 class="pj-title">ML Day Trading System</h3>
+                                <p class="pj-desc">Built a production-grade algorithmic trading system for US equities using a LightGBM + CNN-LSTM ensemble model with FinBERT sentiment analysis. Processes 15 tickers on hourly OHLCV data (50,000+ rows), applies ATR-based risk management, market regime detection, and earnings proximity guards. Fully automated via Windows Task Scheduler — runs signal cycles every hour during US market hours and logs daily sentiment scores.</p>
+                                <div class="pj-stats">
+                                    <span><b>2.49</b>Sharpe</span>
+                                    <span><b>4.37</b>Sortino</span>
+                                    <span><b>+7.76%</b>OOS return</span>
+                                    <span><b>15</b>Tickers hourly</span>
+                                </div>
+                                <div class="pj-tools"><span>Python</span><span>LightGBM</span><span>PyTorch (CNN-LSTM)</span><span>FinBERT (HuggingFace)</span><span>FastAPI</span><span>vectorbt</span><span>Alpaca API</span><span>yfinance</span><span>Docker</span></div>
+                                <div class="pj-actions">
+                                    <button type="button" class="btn btn-primary btn-sm pj-open">Details <i class="bi bi-arrow-right ms-1"></i></button>
+                                    <a href="https://github.com/KartikSalian/ml-daytrade" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
                                 </div>
                             </div>
+                            <div class="pj-extra" hidden>
+                                <p class="tl-detail-label">Performance (out-of-sample backtest)</p>
+                                <p>Sharpe 2.49 · Sortino 4.37 · Return +7.76% · Ensemble accuracy 40.8%</p>
+                            </div>
+                        </article>
 
-                            <!-- Project: Dairy ESG Tracker -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Dairy ESG Tracker — Sustainability Analytics Dashboard</h2>
-                                            <p>Designed and built a board-ready ESG analytics dashboard for the Irish dairy industry, inspired by Ornua/Kerrygold sustainability reporting. Visualises GHG emissions, milk production, land use efficiency, and net-zero 2050 progress using real FAOSTAT data. Features a Nexus-style dark sidebar UI with interactive Plotly charts including donuts, bar charts, and scatter plots.</p>
-                                            <p><strong>Tools Used:</strong> Python, Streamlit, Plotly, Pandas, NumPy, FAOSTAT data, Custom CSS.</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://dairy-esg-tracker-one.streamlit.app" target="_blank" class="btn btn-primary btn-sm px-3">Live Demo</a>
-                                                <a href="https://github.com/KartikSalian/dairy-esg-tracker" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="assets/esg_dashboard.png" alt="Dairy ESG Tracker" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
-                                    </div>
+                        <!-- DocChat -->
+                        <article class="pj-card" data-cat="ml live">
+                            <div class="pj-media">
+                                <img src="assets/docchat.png" alt="DocChat RAG chatbot" loading="lazy" />
+                                <span class="pj-badge"><span class="pj-live-dot" aria-hidden="true"></span>Live</span>
+                            </div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">GenAI · RAG</span></div>
+                                <h3 class="pj-title">DocChat — RAG-Powered Document Chatbot</h3>
+                                <p class="pj-desc">Built a full-stack Retrieval-Augmented Generation (RAG) chatbot that lets users upload PDF documents and ask questions about them in natural language. Uses FAISS vector search to retrieve relevant chunks and Groq's LLaMA 3.1 API for fast, accurate answers. Deployed on Streamlit Cloud with a custom dark UI.</p>
+                                <div class="pj-tools"><span>Python</span><span>LangChain</span><span>FAISS</span><span>sentence-transformers (all-MiniLM-L6-v2)</span><span>Groq API (LLaMA 3.1)</span><span>Streamlit</span><span>PyPDF2</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://docchat-one.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live demo <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                    <a href="https://github.com/KartikSalian/DocChat" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
                                 </div>
                             </div>
+                        </article>
 
-                            <!-- Project: Sales Analytics Dashboard -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Sales Analytics Dashboard (Power BI &amp; Python)</h2>
-                                            <p>Developed an interactive Power BI dashboard using Python for data cleaning and transformation. Utilized DAX for calculated columns and measures to analyze profit, sales growth, and discount impact.</p>
-                                            <p><strong>Tools Used:</strong> Python (Pandas, NumPy), Power BI, Power Query, DAX, Excel/CSV.</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/powerbi-sales-dashboard" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="https://i.imgur.com/9zycNt5.jpeg" alt="Sales Analytics Dashboard" />
-                                    </div>
+                        <!-- Dairy ESG Tracker -->
+                        <article class="pj-card" data-cat="analytics live">
+                            <div class="pj-media">
+                                <img src="assets/esg_dashboard.png" alt="Dairy ESG Tracker dashboard" loading="lazy" />
+                                <span class="pj-badge"><span class="pj-live-dot" aria-hidden="true"></span>Live</span>
+                            </div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Analytics &amp; BI</span></div>
+                                <h3 class="pj-title">Dairy ESG Tracker — Sustainability Analytics</h3>
+                                <p class="pj-desc">Designed and built a board-ready ESG analytics dashboard for the Irish dairy industry, inspired by Ornua/Kerrygold sustainability reporting. Visualises GHG emissions, milk production, land use efficiency, and net-zero 2050 progress using real FAOSTAT data. Features a Nexus-style dark sidebar UI with interactive Plotly charts including donuts, bar charts, and scatter plots.</p>
+                                <div class="pj-tools"><span>Python</span><span>Streamlit</span><span>Plotly</span><span>Pandas</span><span>NumPy</span><span>FAOSTAT data</span><span>Custom CSS</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://dairy-esg-tracker-one.streamlit.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live demo <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                    <a href="https://github.com/KartikSalian/dairy-esg-tracker" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
                                 </div>
                             </div>
+                        </article>
 
-                            <!-- Project: COVID-19 Dashboard -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Global COVID-19 Public Health Dashboard</h2>
-                                            <p>Built an interactive analytics dashboard analysing COVID-19 trends across 180+ countries. Displays total cases, deaths, mortality rates, geographic distribution, and daily case fluctuations with filterable country and date selections using BigQuery SQL and Looker Studio.</p>
-                                            <p><strong>Tools Used:</strong> BigQuery SQL, Google Looker Studio, calculated metrics.</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/Covid-dashboard-looker-studio" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="https://github.com/KartikSalian/Covid-dashboard-looker-studio/raw/main/dashboard-screenshot.png" alt="COVID-19 Dashboard" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
-                                    </div>
+                        <!-- Phishing -->
+                        <article class="pj-card" data-cat="ml">
+                            <div class="pj-media"><img src="https://i.imgur.com/sqVPlfg.jpeg" alt="Phishing email detection system" loading="lazy" /></div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Deep Learning · NLP</span></div>
+                                <h3 class="pj-title">Phishing Email Detection System</h3>
+                                <p class="pj-desc">Developed a hybrid BERT model with engineered features that detects phishing emails with 94% accuracy, reducing false positives by 32% compared to traditional methods.</p>
+                                <div class="pj-stats"><span><b>94%</b>Accuracy</span><span><b>−32%</b>False positives</span></div>
+                                <div class="pj-tools"><span>Python</span><span>PyTorch</span><span>Transformers</span><span>FastAPI</span><span>Scikit-learn</span><span>Docker</span><span>Prometheus</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://github.com/KartikSalian/Phising_email_detection" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
                                 </div>
                             </div>
+                        </article>
 
-                        </div>
+                        <!-- HR Workforce -->
+                        <article class="pj-card" data-cat="analytics">
+                            <div class="pj-media"><img src="https://raw.githubusercontent.com/KartikSalian/hr-analytics-dashboard/main/screenshots/Page1.png" alt="HR Workforce Analytics dashboard" loading="lazy" /></div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Analytics &amp; BI</span></div>
+                                <h3 class="pj-title">HR Workforce Analytics Dashboard</h3>
+                                <p class="pj-desc">Built an end-to-end HR analytics project using the IBM HR Attrition Dataset (1,470 employees). Developed a Python data pipeline for cleaning, quality assurance, and KPI computation — producing 17 metric tables covering attrition, tenure, diversity, absence risk, and compensation. Visualised insights in a 3-page Power BI dashboard with DAX measures, traffic light indicators, and drill-through by department.</p>
+                                <div class="pj-stats"><span><b>1,470</b>Employees</span><span><b>17</b>Metric tables</span></div>
+                                <div class="pj-tools"><span>Python (Pandas, NumPy)</span><span>Power BI</span><span>DAX</span><span>Power Query</span><span>IBM HR Dataset</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://github.com/KartikSalian/hr-analytics-dashboard" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+                                </div>
+                            </div>
+                            <div class="pj-extra" hidden>
+                                <p class="tl-detail-label">Key KPIs</p>
+                                <p>Attrition rate by department/tenure/age, gender balance, absence risk scoring, starter &amp; leaver trends, compensation by grade.</p>
+                            </div>
+                        </article>
+
+                        <!-- Football -->
+                        <article class="pj-card" data-cat="ml">
+                            <div class="pj-media"><img src="https://i.imgur.com/ozihdxY.jpeg" alt="Football match prediction" loading="lazy" /></div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Machine Learning</span></div>
+                                <h3 class="pj-title">Football Match Outcome &amp; Score Prediction</h3>
+                                <p class="pj-desc">Performed in-depth exploratory data analysis and engineered key performance metrics (e.g., PPDA, xG difference, goal differential) to understand team strengths and match dynamics. Engineered performance metrics and trained XGBoost models, achieving 98.46% accuracy in predicting home wins.</p>
+                                <div class="pj-stats"><span><b>98.46%</b>Home-win accuracy</span></div>
+                                <div class="pj-tools"><span>Python</span><span>pandas</span><span>matplotlib</span><span>seaborn</span><span>scikit-learn</span><span>XGBoost</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://github.com/KartikSalian/Football_Match_Prediction" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- COVID -->
+                        <article class="pj-card" data-cat="analytics">
+                            <div class="pj-media"><img src="https://github.com/KartikSalian/Covid-dashboard-looker-studio/raw/main/dashboard-screenshot.png" alt="Global COVID-19 dashboard" loading="lazy" /></div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Analytics &amp; BI</span></div>
+                                <h3 class="pj-title">Global COVID-19 Public Health Dashboard</h3>
+                                <p class="pj-desc">Built an interactive analytics dashboard analysing COVID-19 trends across 180+ countries. Displays total cases, deaths, mortality rates, geographic distribution, and daily case fluctuations with filterable country and date selections using BigQuery SQL and Looker Studio.</p>
+                                <div class="pj-stats"><span><b>180+</b>Countries</span></div>
+                                <div class="pj-tools"><span>BigQuery SQL</span><span>Looker Studio</span><span>Calculated metrics</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://github.com/KartikSalian/Covid-dashboard-looker-studio" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Sentiment -->
+                        <article class="pj-card" data-cat="ml">
+                            <div class="pj-media"><img src="https://i.imgur.com/CcoHEWu.jpeg" alt="Financial news sentiment analysis" loading="lazy" /></div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">NLP</span></div>
+                                <h3 class="pj-title">Financial News Sentiment Analysis</h3>
+                                <p class="pj-desc">Built a sentiment analysis system using Logistic Regression, SVM, and Random Forest models, achieving 81% accuracy in classifying financial news sentiment.</p>
+                                <div class="pj-stats"><span><b>81%</b>Accuracy</span></div>
+                                <div class="pj-tools"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Matplotlib</span><span>TF-IDF</span><span>Logistic Regression</span><span>SVM</span><span>Random Forest</span><span>Kaggle Dataset</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://github.com/KartikSalian/Financial-News-Sentiment-Analysis" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Sales -->
+                        <article class="pj-card" data-cat="analytics">
+                            <div class="pj-media"><img src="https://i.imgur.com/9zycNt5.jpeg" alt="Sales analytics dashboard" loading="lazy" /></div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Analytics &amp; BI</span></div>
+                                <h3 class="pj-title">Sales Analytics Dashboard (Power BI &amp; Python)</h3>
+                                <p class="pj-desc">Developed an interactive Power BI dashboard using Python for data cleaning and transformation. Utilized DAX for calculated columns and measures to analyze profit, sales growth, and discount impact.</p>
+                                <div class="pj-tools"><span>Python (Pandas, NumPy)</span><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Excel/CSV</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://github.com/KartikSalian/powerbi-sales-dashboard" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- System Health -->
+                        <article class="pj-card" data-cat="tools">
+                            <div class="pj-media"><img src="assets/system_health.png" alt="System Health Monitor" loading="lazy" /></div>
+                            <div class="pj-body">
+                                <div class="pj-tags"><span class="pj-tag">Engineering</span></div>
+                                <h3 class="pj-title">System Health Monitor</h3>
+                                <p class="pj-desc">Developed a lightweight Java application that continuously monitors system performance every 30 seconds — tracking CPU usage, memory consumption, and disk space. Automatically logs reports to file and triggers threshold warnings when CPU exceeds 80%, memory 85%, or disk 90%.</p>
+                                <div class="pj-tools"><span>Java 8+</span><span>OperatingSystemMXBean</span><span>ManagementFactory</span><span>No external dependencies</span></div>
+                                <div class="pj-actions">
+                                    <a href="https://github.com/KartikSalian/system-health-monitor" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
 
-                    <!-- Section 2: Machine Learning & AI -->
-                    <div class="row gx-5 justify-content-center mt-4" id="section-ml">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <h2 class="fw-bolder mb-4" style="border-bottom: 3px solid #0d6efd; padding-bottom: 0.5rem;">Machine Learning &amp; AI</h2>
-
-                            <!-- Project: ML Day Trading System -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">ML Day Trading System</h2>
-                                            <span class="badge bg-success mb-2">Paper Testing</span>
-                                            <p>Built a production-grade algorithmic trading system for US equities using a LightGBM + CNN-LSTM ensemble model with FinBERT sentiment analysis. Processes 15 tickers on hourly OHLCV data (50,000+ rows), applies ATR-based risk management, market regime detection, and earnings proximity guards. Fully automated via Windows Task Scheduler — runs signal cycles every hour during US market hours and logs daily sentiment scores.</p>
-                                            <p><strong>Tools Used:</strong> Python, LightGBM, PyTorch (CNN-LSTM), FinBERT (HuggingFace), FastAPI, vectorbt, Alpaca API, yfinance, Docker.</p>
-                                            <p><strong>Performance (OOS Backtest):</strong> Sharpe 2.49 &nbsp;|&nbsp; Sortino 4.37 &nbsp;|&nbsp; Return +7.76% &nbsp;|&nbsp; Ensemble Accuracy 40.8%</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/ml-daytrade" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="assets/ml-stockmarketimage.png" alt="ML Day Trading System" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project: DocChat RAG Chatbot -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">DocChat — RAG-Powered Document Chatbot</h2>
-                                            <p>Built a full-stack Retrieval-Augmented Generation (RAG) chatbot that lets users upload PDF documents and ask questions about them in natural language. Uses FAISS vector search to retrieve relevant chunks and Groq's LLaMA 3.1 API for fast, accurate answers. Deployed on Streamlit Cloud with a custom dark UI.</p>
-                                            <p><strong>Tools Used:</strong> Python, LangChain, FAISS, sentence-transformers (all-MiniLM-L6-v2), Groq API (LLaMA 3.1), Streamlit, PyPDF2.</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://docchat-one.streamlit.app" target="_blank" class="btn btn-primary btn-sm px-3">Live Demo</a>
-                                                <a href="https://github.com/KartikSalian/DocChat" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="assets/docchat.png" alt="DocChat RAG Chatbot" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 1: Financial News Sentiment Analysis -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Financial News Sentiment Analysis</h2>
-                                            <p>Built a sentiment analysis system using Logistic Regression, SVM, and Random Forest models, achieving 81% accuracy in classifying financial news sentiment.</p>
-                                            <p><strong>Tools Used:</strong> Python (Pandas, Scikit-learn, Matplotlib), Kaggle Dataset, TF-IDF, Logistic Regression, SVM, Random Forest.</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/Financial-News-Sentiment-Analysis" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="https://i.imgur.com/CcoHEWu.jpeg" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 3: Phishing Email Detection System -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Phishing Email Detection System</h2>
-                                            <p>Developed a hybrid BERT model with engineered features that detects phishing emails with 94% accuracy, reducing false positives by 32% compared to traditional methods.</p>
-                                            <p><strong>Tools Used:</strong> Python (PyTorch, Transformers, FastAPI), Scikit-learn, Docker, Prometheus.</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/Phising_email_detection" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="https://i.imgur.com/sqVPlfg.jpeg" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Project 4: Football Match Outcome & Score Prediction -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Football Match Outcome & Score Prediction</h2>
-                                            <p>Performed in-depth exploratory data analysis and engineered key performance metrics (e.g., PPDA, xG difference, goal differential) to understand team strengths and match dynamics. Engineered performance metrics and trained XGBoost models, achieving 98.46% accuracy in predicting home wins.</p>
-                                            <p><strong>Tools Used:</strong> Python (pandas, matplotlib, seaborn, sklearn)</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/Football_Match_Prediction" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="https://i.imgur.com/ozihdxY.jpeg" alt="..." />
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Project: System Health Monitor -->
-                            <div class="card tilt-card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center flex-column flex-md-row">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">System Health Monitor</h2>
-                                            <p>Developed a lightweight Java application that continuously monitors system performance every 30 seconds — tracking CPU usage, memory consumption, and disk space. Automatically logs reports to file and triggers threshold warnings when CPU exceeds 80%, memory 85%, or disk 90%.</p>
-                                            <p><strong>Tools Used:</strong> Java 8+, OperatingSystemMXBean, ManagementFactory (no external dependencies).</p>
-                                            <div class="d-flex gap-2 mt-3">
-                                                <a href="https://github.com/KartikSalian/system-health-monitor" target="_blank" class="btn btn-outline-dark btn-sm px-3">GitHub</a>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="assets/system_health.png" alt="System Health Monitor" style="width:100%;max-width:220px;height:180px;object-fit:cover;" />
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                    <!-- More on GitHub -->
+                    <div class="pj-more mt-5">
+                        <span class="pj-more-icon"><i class="bi bi-github"></i></span>
+                        <span class="pj-more-text">There's more where these came from — experiments, notebooks and source code.</span>
+                        <a href="https://github.com/KartikSalian?tab=repositories" target="_blank" rel="noopener" class="btn btn-primary btn-sm px-4">All repositories <i class="bi bi-arrow-right ms-1"></i></a>
                     </div>
                 </div>
             </section>
 
-            <!-- More Projects Link Section-->
-            <section class="py-5">
-                <div class="container text-center">
-                    <p class="lead">I have worked on many more exciting projects! Check out my full portfolio and source code on  <a href="https://github.com/KartikSalian?tab=repositories" target="_blank">GitHub</a>.</p>
+            <!-- Project details popup (filled by js/projects.js) -->
+            <dialog class="tl-dialog pj-dialog" id="pjDialog" aria-labelledby="pjDialogTitle">
+                <div class="pj-dialog-media" data-slot="media"></div>
+                <div class="tl-dialog-head">
+                    <div class="d-flex justify-content-between align-items-start gap-3">
+                        <div class="pj-tags" data-slot="tags"></div>
+                        <button type="button" class="tl-close" aria-label="Close details"><i class="bi bi-x-lg"></i></button>
+                    </div>
+                    <h3 class="tl-dialog-title" id="pjDialogTitle" data-slot="title"></h3>
                 </div>
-            </section>
+                <div class="tl-dialog-body">
+                    <div class="pj-stats mb-3" data-slot="stats"></div>
+                    <p data-slot="desc"></p>
+                    <div data-slot="extra"></div>
+                    <p class="tl-detail-label mt-3">Tools used</p>
+                    <div class="tl-chips mb-4" data-slot="tools"></div>
+                    <div class="pj-actions" data-slot="actions"></div>
+                </div>
+            </dialog>
             
             <!-- Call to action section-->
             <section class="py-5 bg-gradient-primary-to-secondary text-white">
@@ -295,16 +293,15 @@
         </main>
 
         <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
+        <footer class="py-4 mt-auto">
             <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Kartik Salian 2025</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                <div class="site-footer">
+                    <div class="small m-0">&copy; <span class="js-year">2026</span> Kartik Salian</div>
+                    <div class="footer-links small">
+                        <a href="https://github.com/KartikSalian" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://linkedin.com/in/kartik-salian-445038184" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#" class="to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
                     </div>
                 </div>
             </div>
@@ -317,53 +314,6 @@
         <!-- 3D page-header scene + interaction effects-->
         <script type="module" src="js/hero-scene.js"></script>
         <script src="js/effects.js" defer></script>
-        <script>
-            function filterProjects(type) {
-                const analytics = document.getElementById('section-analytics');
-                const ml = document.getElementById('section-ml');
-                const btnAll = document.getElementById('btn-all');
-                const btnAnalytics = document.getElementById('btn-analytics');
-                const btnMl = document.getElementById('btn-ml');
-
-                // Reset buttons
-                [btnAll, btnAnalytics, btnMl].forEach(b => {
-                    b.classList.remove('btn-primary');
-                    b.classList.add('btn-outline-primary');
-                });
-
-                if (type === 'all') {
-                    analytics.style.display = '';
-                    ml.style.display = '';
-                    btnAll.classList.remove('btn-outline-primary');
-                    btnAll.classList.add('btn-primary');
-                } else if (type === 'analytics') {
-                    analytics.style.display = '';
-                    ml.style.display = 'none';
-                    btnAnalytics.classList.remove('btn-outline-primary');
-                    btnAnalytics.classList.add('btn-primary');
-                } else if (type === 'ml') {
-                    analytics.style.display = 'none';
-                    ml.style.display = '';
-                    btnMl.classList.remove('btn-outline-primary');
-                    btnMl.classList.add('btn-primary');
-                }
-            }
-
-            // On this page sidebar
-            const sidebar = document.createElement('div');
-            sidebar.innerHTML = `
-                <div style="position:fixed; top:220px; left:20px; background:rgba(255,255,255,0.045); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.1); border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.3); padding:1.2rem 1.5rem; min-width:160px; z-index:100;" class="d-none d-xl-block">
-                    <div class="small fw-bold mb-3" style="letter-spacing:0.08em;color:#a7aec4;">ON THIS PAGE</div>
-                    <div class="d-flex flex-column gap-2">
-                        <a href="#section-analytics" class="text-decoration-none fw-semibold" style="font-size:0.9rem;color:#5b7cff;">
-                            <i class="bi bi-bar-chart-fill me-2"></i>Analytics
-                        </a>
-                        <a href="#section-ml" class="text-decoration-none fw-semibold" style="font-size:0.9rem;color:#5b7cff;">
-                            <i class="bi bi-cpu-fill me-2"></i>ML &amp; AI
-                        </a>
-                    </div>
-                </div>`;
-            document.body.appendChild(sidebar);
-        </script>
+        <script src="js/projects.js" defer></script>
     </body>
 </html>

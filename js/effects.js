@@ -46,6 +46,42 @@
         };
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
+
+        // Mark the current page's nav link (gets the peach underline).
+        var page = location.pathname.split("/").pop() || "index.html";
+        nav.querySelectorAll(".nav-link").forEach(function (link) {
+            if (link.getAttribute("href") === page) link.classList.add("active");
+        });
+
+        // Floating social capsule (desktop ≥1400px only, via CSS). Page links
+        // live in the top bar, so this only carries external profiles.
+        var railItems = [
+            { href: "https://github.com/KartikSalian", icon: "bi-github", label: "GitHub", external: true },
+            { href: "https://linkedin.com/in/kartik-salian-445038184", icon: "bi-linkedin", label: "LinkedIn", external: true },
+        ];
+        var rail = document.createElement("nav");
+        rail.className = "side-rail";
+        rail.setAttribute("aria-label", "Quick links");
+        railItems.forEach(function (item) {
+            if (!item) {
+                var sep = document.createElement("span");
+                sep.className = "rail-sep";
+                rail.appendChild(sep);
+                return;
+            }
+            var a = document.createElement("a");
+            a.href = item.href;
+            a.setAttribute("aria-label", item.label);
+            a.setAttribute("data-label", item.label);
+            a.innerHTML = '<i class="bi ' + item.icon + '"></i>';
+            if (item.external) {
+                a.target = "_blank";
+                a.rel = "noopener";
+            }
+            if (item.href === page) a.classList.add("active");
+            rail.appendChild(a);
+        });
+        document.body.appendChild(rail);
     }
 
     var revealEls = document.querySelectorAll(".reveal");
@@ -69,6 +105,56 @@
             revealEls.forEach(function (el) {
                 observer.observe(el);
             });
+        }
+    }
+
+    // Footer: always-current year + smooth back-to-top.
+    document.querySelectorAll(".js-year").forEach(function (el) {
+        el.textContent = new Date().getFullYear();
+    });
+    document.querySelectorAll(".to-top").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+        });
+    });
+
+    // Hero rotator: types / deletes through data-words ("a|b|c").
+    var rotator = document.querySelector(".rotator[data-words]");
+    if (rotator) {
+        var words = rotator.getAttribute("data-words").split("|");
+        var w = 0;
+        if (prefersReducedMotion) {
+            setInterval(function () {
+                w = (w + 1) % words.length;
+                rotator.textContent = words[w];
+            }, 2600);
+        } else {
+            var text = words[0];
+            var deleting = false;
+            var tick = function () {
+                var target = words[w];
+                if (deleting) {
+                    text = text.slice(0, -1);
+                    if (!text) {
+                        deleting = false;
+                        w = (w + 1) % words.length;
+                    }
+                } else {
+                    text = target.slice(0, text.length + 1);
+                }
+                rotator.textContent = text;
+                var delay = deleting ? 45 : 85;
+                if (!deleting && text === target) {
+                    deleting = true;
+                    delay = 2000; // hold the full word
+                }
+                setTimeout(tick, delay);
+            };
+            setTimeout(function () {
+                deleting = true;
+                tick();
+            }, 2000);
         }
     }
 })();

@@ -23,9 +23,9 @@
         <!-- Custom Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
         <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <!-- Modern 3D redesign (scoped to .theme-3d)-->
@@ -66,49 +66,110 @@
             <!-- Page content-->
             <section class="py-5">
                 <div class="container px-5">
-                    <div class="tilt-card bg-light rounded-4 py-5 px-4 px-md-5">
-                        <div class="text-center mb-5">
-                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-person"></i></div>
-                            <h2 class="fw-bolder">Contact Information</h2>
-                            <p class="lead fw-normal text-muted mb-0">Here's how you can reach out to me:</p>
+                    <div class="row g-4 align-items-stretch">
+                        <!-- Availability -->
+                        <div class="col-lg-5">
+                            <div class="ct-status h-100 reveal">
+                                <div class="ct-pill"><span class="live-dot" aria-hidden="true"></span>Open to opportunities</div>
+                                <h2 class="ct-status-title">Let's turn your data into something meaningful.</h2>
+                                <p class="ct-status-text">I'm currently a Data Scientist &amp; Research Assistant at the University of Galway, and open to new roles and collaborations.</p>
+
+                                <p class="ct-label">Roles I'm open to</p>
+                                <div class="ct-roles">
+                                    <span>Data Science</span><span>Machine Learning</span><span>AI Engineering</span><span>Data Analytics</span><span>Business Intelligence</span>
+                                </div>
+
+                                <div class="ct-meta">
+                                    <span><i class="bi bi-geo-alt-fill"></i>Galway, Ireland</span>
+                                    <span><i class="bi bi-briefcase-fill"></i>3+ yrs industry experience</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row gx-5 justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex align-items-center gap-3">
-                                        <span class="about-card-icon" style="margin-bottom:0;"><i class="bi bi-envelope-fill"></i></span>
-                                        <a href="mailto:salian.kartik7@gmail.com">salian.kartik7@gmail.com</a>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-center gap-3">
-                                        <span class="about-card-icon" style="margin-bottom:0;"><i class="bi bi-envelope-fill"></i></span>
-                                        <a href="mailto:salian.kartik9@gmail.com">salian.kartik9@gmail.com</a>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-center gap-3">
-                                        <span class="about-card-icon" style="margin-bottom:0;"><i class="bi bi-linkedin"></i></span>
-                                        <a href="https://linkedin.com/in/kartik-salian-445038184" target="_blank">linkedin.com/in/kartik-salian</a>
-                                    </li>
-                                    <li class="list-group-item d-flex align-items-center gap-3">
-                                        <span class="about-card-icon" style="margin-bottom:0;"><i class="bi bi-github"></i></span>
-                                        <a href="https://github.com/KartikSalian" target="_blank">github.com/KartikSalian</a>
-                                    </li>
-                                </ul>
+
+                        <!-- Contact methods + quick message -->
+                        <div class="col-lg-7">
+                            <div class="ct-card h-100 reveal">
+                                <h2 class="ct-card-title">Reach me directly</h2>
+
+                                <div class="ct-methods">
+                                    <div class="ct-method">
+                                        <span class="ct-icon"><i class="bi bi-envelope-fill"></i></span>
+                                        <div class="ct-method-text">
+                                            <span class="ct-method-label">Email · primary</span>
+                                            <a href="mailto:salian.kartik7@gmail.com">salian.kartik7@gmail.com</a>
+                                        </div>
+                                        <button type="button" class="ct-copy" data-copy="salian.kartik7@gmail.com" aria-label="Copy salian.kartik7@gmail.com"><i class="bi bi-copy"></i><span>Copy</span></button>
+                                    </div>
+
+                                    <div class="ct-method">
+                                        <span class="ct-icon"><i class="bi bi-envelope"></i></span>
+                                        <div class="ct-method-text">
+                                            <span class="ct-method-label">Email · alternate</span>
+                                            <a href="mailto:salian.kartik9@gmail.com">salian.kartik9@gmail.com</a>
+                                        </div>
+                                        <button type="button" class="ct-copy" data-copy="salian.kartik9@gmail.com" aria-label="Copy salian.kartik9@gmail.com"><i class="bi bi-copy"></i><span>Copy</span></button>
+                                    </div>
+
+                                    <div class="ct-socials">
+                                        <a class="ct-social" href="https://linkedin.com/in/kartik-salian-445038184" target="_blank" rel="noopener">
+                                            <span class="ct-icon"><i class="bi bi-linkedin"></i></span>
+                                            <span><span class="ct-method-label">LinkedIn</span>kartik-salian</span>
+                                            <i class="bi bi-arrow-up-right ct-arrow"></i>
+                                        </a>
+                                        <a class="ct-social" href="https://github.com/KartikSalian" target="_blank" rel="noopener">
+                                            <span class="ct-icon"><i class="bi bi-github"></i></span>
+                                            <span><span class="ct-method-label">GitHub</span>KartikSalian</span>
+                                            <i class="bi bi-arrow-up-right ct-arrow"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Quick message: opens the visitor's email app, pre-filled -->
+                                <form class="ct-form" id="ctForm" novalidate>
+                                    <p class="ct-label mb-3">Quick message</p>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <label class="visually-hidden" for="ctName">Your name</label>
+                                            <input class="ct-input" id="ctName" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label class="visually-hidden" for="ctTopic">Topic</label>
+                                            <select class="ct-input" id="ctTopic" name="topic">
+                                                <option>Job opportunity</option>
+                                                <option>Project collaboration</option>
+                                                <option>Question about a project</option>
+                                                <option>Just saying hi</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="visually-hidden" for="ctMsg">Message</label>
+                                            <textarea class="ct-input" id="ctMsg" name="message" rows="4" placeholder="Your message…" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-wrap align-items-center gap-3 mt-3">
+                                        <button type="submit" class="btn btn-primary px-4">Open in my email app <i class="bi bi-send ms-1"></i></button>
+                                        <span class="small ct-hint" id="ctHint">Opens your email app with this message ready to send.</span>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Copy toast -->
+            <div class="ct-toast" id="ctToast" role="status" aria-live="polite"></div>
         </main>
         <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
+        <footer class="py-4 mt-auto">
             <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Kartik Salian 2025</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                <div class="site-footer">
+                    <div class="small m-0">&copy; <span class="js-year">2026</span> Kartik Salian</div>
+                    <div class="footer-links small">
+                        <a href="https://github.com/KartikSalian" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://linkedin.com/in/kartik-salian-445038184" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#" class="to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
                     </div>
                 </div>
             </div>
@@ -120,5 +181,6 @@
         <!-- 3D page-header scene + interaction effects-->
         <script type="module" src="js/hero-scene.js"></script>
         <script src="js/effects.js" defer></script>
+        <script src="js/contact.js" defer></script>
     </body>
 </html>
