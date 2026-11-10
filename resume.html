@@ -27,9 +27,9 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css?v=20261110b" rel="stylesheet" />
+        <link href="css/styles.css?v=20261110f" rel="stylesheet" />
         <!-- Modern 3D redesign (scoped to .theme-3d)-->
-        <link href="css/custom-3d.css?v=20261110b" rel="stylesheet" />
+        <link href="css/custom-3d.css?v=20261110f" rel="stylesheet" />
         <style>
             @keyframes fadeSlideIn {
                 from { opacity: 0; transform: translateY(22px); }
@@ -89,7 +89,7 @@
                     <ol class="timeline">
                         <!-- University of Galway — EcoFoodSystems (current) -->
                         <li class="tl-item is-work is-current reveal">
-                            <span class="tl-node" aria-hidden="true"><i class="bi bi-cpu-fill"></i></span>
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Current role</span>
                                 <span class="tl-date">Oct 2026 – Present</span>
@@ -99,10 +99,10 @@
                             </button>
                             <div class="tl-details" hidden>
                                 <ul>
-                                    <li>Designed and built a tool-calling LLM assistant (Groq) integrated into a production Dash dashboard, grounded against five live data tools to prevent fabrication. Diagnosed and fixed seven verified classes of hallucination, each reproduced and re-verified end-to-end before deployment. Handled rate limits via model routing and history capping, with a provider-agnostic client layer that can swap between Groq and Claude without application changes.</li>
+                                    <li>Designed and built a tool-calling LLM assistant (Groq) integrated into a production Dash dashboard, grounded against five live data tools to prevent fabrication. Diagnosed and fixed seven verified classes of hallucination, each reproduced and re-verified end-to-end before deployment. Handled rate limits via model routing and history capping.</li>
                                     <li>Containerised the application with Docker and deployed to Hugging Face Spaces with password protection and a backup deployment. Pinned dependencies for stable production releases.</li>
                                     <li>Wrote a load-testing tool and used it to tune gunicorn workers, response compression, caching, and map rendering. Improved a heavy map view from about 2 s to 0.6 s and sustained 20–25 simultaneous users during live international stakeholder workshops in Hanoi.</li>
-                                    <li>Refactored a large monolithic Dash/Plotly app (4,363 lines) into five modules, removed 13 circular-import workarounds, and moved hardcoded credentials and secrets to environment variables — validated with pixel-diff and functional tests.</li>
+                                    <li>Refactored a large monolithic Dash/Plotly app into five modules and moved hardcoded credentials and secrets to environment variables.</li>
                                     <li>Built the Hanoi Dietary Intake page from household survey (DQQ) data, with indicator cards, charts, and data-source notes. Fixed page crashes and wired new data sub-domains into the dashboard, collaborating with the lead developer via GitHub.</li>
                                     <li>Reviewed multistakeholder workshop reports from Hanoi and Addis Ababa. Drafting the dashboard development narrative and stewardship plan to December 2027 for the project manager.</li>
                                     <li>Supported and ran live workshop operations in Hanoi: monitored load and active users, deployed urgent fixes, and kept the site stable throughout.</li>
@@ -110,21 +110,26 @@
                             </div>
                         </li>
 
-                        <!-- University of Galway — Agri-Imminence -->
+                        <!-- University of Galway — Data Scientist -->
                         <li class="tl-item is-work reveal">
                             <span class="tl-node" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
-                                <span class="tl-type">Research role</span>
+                                <span class="tl-type">Full-time</span>
                                 <span class="tl-date">Jul 2025 – Aug 2025</span>
-                                <span class="tl-role">Data Scientist, Agri-Imminence Project</span>
-                                <span class="tl-org">Ryan Institute, University of Galway · Galway, Ireland</span>
+                                <span class="tl-role">Data Scientist / Research Assistant</span>
+                                <span class="tl-org">University of Galway · Galway, Ireland</span>
                                 <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
                             </button>
                             <div class="tl-details" hidden>
                                 <ul>
-                                    <li>Built 7–10 day forecasts of greenhouse soil tension, air temperature, and VPD, benchmarking XGBoost (40 Optuna-tuned models) against an LSTM seq2seq; XGBoost won on every target, with soil tension shallow MAE of 26.7 mbar against 35.5.</li>
-                                    <li>Delivered a FastAPI and React/TypeScript farmer dashboard that maps 40+ Spanish and English column-name variants to one schema, manages crop cycles, and shows plain-language forecast alerts over Plotly charts.</li>
-                                    <li>Validated accuracy beyond the training window with walk-forward tests on sensor data collected after the cutoff; six diagnostic plots showed it held across the full forecast window.</li>
+                                    <li>Built an end-to-end data platform ingesting real-time IoT sensor data (soil, temperature) and generating 7-day forward forecasts of growing conditions using ML models and external weather API integration.</li>
+                                    <li>Designed ML pipelines for anomaly detection and pattern extraction from large-scale heterogeneous sensor datasets, applying Isolation Forest and seasonal quantile modelling.</li>
+                                    <li>Developed a decision support system that translates complex model outputs into plain-language, actionable guidance — bridging the gap between technical ML results and non-technical end users.</li>
+                                    <li>Integrated an AI-powered natural language interface enabling users to query operational data conversationally, improving accessibility and adoption of data-driven tools.</li>
+                                    <li>Delivered interactive, mobile-responsive dashboards with uncertainty bands, event markers, and dynamic visualisations using Plotly and Python.</li>
+                                    <li>Implemented a human-in-the-loop validation layer to enforce safety and compliance checks before AI outputs were surfaced to operational users, ensuring responsible AI deployment.</li>
+                                    <li>Produced technical documentation, architecture diagrams, and reports for both academic and industry stakeholders.</li>
+                                    <li>Applied Agile/Scrum methodologies to manage project delivery, facilitated sprint planning, maintained a prioritised backlog of research and development tasks, and coordinated regular review sessions with academic and industry stakeholders to align on requirements and progress.</li>
                                 </ul>
                             </div>
                         </li>
@@ -135,23 +140,23 @@
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Full-time</span>
                                 <span class="tl-date">Aug 2023 – Feb 2025</span>
-                                <span class="tl-role">Optimisation Engineer</span>
+                                <span class="tl-role">Data Analyst</span>
                                 <span class="tl-org">Vodafone · Dublin, Ireland</span>
                                 <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
                             </button>
                             <div class="tl-details" hidden>
                                 <ul>
-                                    <li>Automated monthly network reporting with Python and SQL pipelines over 10+ sources in JSON, CSV, and XML, replacing manual processes and delivering structured outputs to senior leadership on schedule.</li>
-                                    <li>Built Power BI dashboards with DAX measures and Power Query transformations for regional network KPIs, from requirements gathered directly with business owners; senior leadership relied on them for commercial decisions.</li>
-                                    <li>Showed through correlation analysis across both datasets that network performance had no significant link to churn, and redirected planned investment toward retention levers in a written recommendation.</li>
-                                    <li>Ran a phased, monitored WiFi performance rollout with rollback to a 94% success rate and built the business case for a network-wide deployment.</li>
+                                    <li>Designed and deployed dashboards, reports, and automated insights pipelines for operational optimization.</li>
+                                    <li>Built scalable data workflows and contributed to predictive systems supporting business-critical decisions.</li>
+                                    <li>Collaborated cross-functionally to uncover data-driven strategies across customer experience, churn, and marketing analytics.</li>
+                                    <li>Productionized machine learning models for anomaly detection and reporting automation in cloud environments.</li>
                                 </ul>
                             </div>
                         </li>
 
                         <!-- Menlo Park Hotel -->
                         <li class="tl-item is-part reveal">
-                            <span class="tl-node" aria-hidden="true"><i class="bi bi-shop"></i></span>
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-cup-hot-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Part-time</span>
                                 <span class="tl-date">May 2023 – Aug 2023</span>
@@ -168,7 +173,7 @@
 
                         <!-- Lafayette Graduation Services -->
                         <li class="tl-item is-part reveal">
-                            <span class="tl-node" aria-hidden="true"><i class="bi bi-shop"></i></span>
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-cup-hot-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Part-time</span>
                                 <span class="tl-date">Mar 2023</span>
@@ -185,7 +190,7 @@
 
                         <!-- Dunnes Stores -->
                         <li class="tl-item is-part reveal">
-                            <span class="tl-node" aria-hidden="true"><i class="bi bi-shop"></i></span>
+                            <span class="tl-node" aria-hidden="true"><i class="bi bi-cup-hot-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Part-time</span>
                                 <span class="tl-date">Nov 2022 – Jan 2023</span>
@@ -206,15 +211,15 @@
                             <span class="tl-node" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Education</span>
-                                <span class="tl-date">Sep 2022 – Aug 2023</span>
-                                <span class="tl-role">MSc Computer Science (Data Analytics)</span>
+                                <span class="tl-date">2022 – 2023</span>
+                                <span class="tl-role">Master's, Computer Science (Data Analytics)</span>
                                 <span class="tl-org">University of Galway · Galway, Ireland</span>
                                 <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
                             </button>
                             <div class="tl-details" hidden>
                                 <p class="tl-detail-label">Related modules</p>
                                 <div class="tl-chips">
-                                    <span>Machine Learning</span><span>Statistical Analysis</span><span>Deep Learning</span><span>NLP</span><span>Image Processing</span><span>Data Visualisation</span><span>Knowledge Graphs</span><span>R Language</span>
+                                    <span>Machine Learning</span><span>Deep Learning</span><span>NLP</span><span>Image Processing</span><span>Data Visualization</span><span>R</span><span>Knowledge Graphs</span>
                                 </div>
                             </div>
                         </li>
@@ -244,15 +249,15 @@
                             <span class="tl-node" aria-hidden="true"><i class="bi bi-briefcase-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Internship</span>
-                                <span class="tl-date">May 2021 – Jul 2021</span>
+                                <span class="tl-date">May 2021 – Jun 2021</span>
                                 <span class="tl-role">Data Analyst Intern</span>
                                 <span class="tl-org">Devlance · Delhi (Remote), India</span>
                                 <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
                             </button>
                             <div class="tl-details" hidden>
                                 <ul>
-                                    <li>Analysed HR datasets using Python and SQL, identifying attrition patterns and salary distribution trends.</li>
-                                    <li>Built dashboards giving non-technical HR managers self-serve access to workforce insights that previously required manual analyst requests.</li>
+                                    <li>Performed statistical analysis and built analytical models to support compensation benchmarking.</li>
+                                    <li>Developed intuitive visual summaries to assist stakeholders in data interpretation and strategy planning.</li>
                                 </ul>
                             </div>
                         </li>
@@ -262,15 +267,15 @@
                             <span class="tl-node" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
                             <button type="button" class="tl-card" aria-haspopup="dialog">
                                 <span class="tl-type">Education</span>
-                                <span class="tl-date">Jul 2018 – May 2022</span>
-                                <span class="tl-role">BE Electronics Engineering</span>
+                                <span class="tl-date">2018 – 2022</span>
+                                <span class="tl-role">Undergraduate, Electronics Engineering</span>
                                 <span class="tl-org">Fr. Conceicao Rodrigues College of Engineering · Mumbai, India</span>
                                 <span class="tl-more">View details <i class="bi bi-arrow-right"></i></span>
                             </button>
                             <div class="tl-details" hidden>
                                 <p class="tl-detail-label">Related modules</p>
                                 <div class="tl-chips">
-                                    <span>Neural Networks</span><span>Digital Signal Processing</span><span>Object-Oriented Programming</span><span>DBMS</span><span>Algorithms</span><span>C</span><span>AutoCAD</span>
+                                    <span>Neural Networks</span><span>Digital Signal Processing</span><span>Object-Oriented Programming</span><span>DBMS</span><span>C</span><span>AutoCAD</span>
                                 </div>
                             </div>
                         </li>
@@ -306,7 +311,6 @@
                     <div class="sk-langs mb-4">
                         <span class="sk-lang is-now"><i class="bi bi-filetype-py"></i>Python</span>
                         <span class="sk-lang"><i class="bi bi-database"></i>SQL</span>
-                        <span class="sk-lang"><i class="bi bi-filetype-tsx"></i>TypeScript</span>
                         <span class="sk-lang"><i class="bi bi-bar-chart-line"></i>R</span>
                         <span class="sk-lang"><i class="bi bi-cup-hot"></i>Java</span>
                         <span class="sk-lang"><i class="bi bi-file-earmark-spreadsheet"></i>Excel / VBA</span>
@@ -315,86 +319,90 @@
                     <div class="row g-4">
                         <div class="col-md-6 col-xl-4">
                             <div class="sk-card reveal">
-                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-chat-square-text"></i></span><h3>LLM &amp; Agentic Systems</h3></div>
-                                <div class="sk-chips">
-                                    <span class="is-now">Tool-calling assistants</span>
-                                    <span class="is-now">Grounding &amp; hallucination mitigation</span>
-                                    <span class="is-now">Provider-agnostic LLM clients (Groq, Claude)</span>
-                                    <span class="is-now">Rate limiting &amp; model routing</span>
-                                    <span>Prompt engineering</span>
-                                    <span>RAG (FAISS)</span>
-                                    <span>LangChain</span>
-                                    <span>Prompt-injection defence (OWASP LLM Top 10)</span>
-                                    <span>Hugging Face Transformers</span>
-                                    <span>FinBERT</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-4">
-                            <div class="sk-card reveal">
-                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-rocket-takeoff"></i></span><h3>Deployment &amp; Reliability</h3></div>
-                                <div class="sk-chips">
-                                    <span class="is-now">Docker</span>
-                                    <span class="is-now">Hugging Face Spaces</span>
-                                    <span class="is-now">gunicorn tuning</span>
-                                    <span class="is-now">Load testing</span>
-                                    <span class="is-now">Caching &amp; compression</span>
-                                    <span class="is-now">Monitoring</span>
-                                    <span class="is-now">Secrets via env variables</span>
-                                    <span>Kubernetes</span>
-                                    <span>Prometheus</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-4">
-                            <div class="sk-card reveal">
-                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-code-slash"></i></span><h3>Software Engineering</h3></div>
-                                <div class="sk-chips">
-                                    <span class="is-now">Dash / Plotly apps</span>
-                                    <span class="is-now">Modular refactoring</span>
-                                    <span class="is-now">Git / GitHub</span>
-                                    <span class="is-now">Pixel-diff &amp; functional tests</span>
-                                    <span>FastAPI</span>
-                                    <span>React (TypeScript)</span>
-                                    <span>REST APIs</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-4">
-                            <div class="sk-card reveal">
                                 <div class="sk-head"><span class="sk-icon"><i class="bi bi-cpu"></i></span><h3>Machine Learning</h3></div>
                                 <div class="sk-chips">
                                     <span>Time-series forecasting</span>
-                                    <span>XGBoost</span>
-                                    <span>Optuna tuning</span>
-                                    <span>LSTM seq2seq</span>
-                                    <span>Walk-forward validation</span>
+                                    <span>Anomaly detection</span>
+                                    <span>Isolation Forest</span>
                                     <span>Scikit-learn</span>
+                                    <span>XGBoost</span>
                                     <span>LightGBM</span>
                                     <span>PyTorch</span>
-                                    <span>Anomaly detection</span>
-                                    <span>Correlation &amp; churn analysis</span>
+                                    <span>CNN-LSTM</span>
+                                    <span>Churn prediction</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-6 col-xl-4">
                             <div class="sk-card reveal">
-                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-pie-chart"></i></span><h3>Data, Analytics &amp; BI</h3></div>
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-chat-square-text"></i></span><h3>GenAI, LLMs &amp; NLP</h3></div>
                                 <div class="sk-chips">
+                                    <span class="is-now">Tool-calling LLM assistants</span>
+                                    <span class="is-now">Grounding &amp; hallucination fixes</span>
+                                    <span class="is-now">Rate limiting &amp; model routing</span>
+                                    <span>Human-in-the-loop AI</span>
+                                    <span>RAG</span>
+                                    <span>LangChain</span>
+                                    <span>FAISS</span>
+                                    <span>Hugging Face Transformers</span>
+                                    <span>FinBERT</span>
+                                    <span>Sentence-transformers</span>
+                                    <span class="is-now">Groq API</span>
+                                    <span>TF-IDF</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-diagram-3"></i></span><h3>Data Engineering &amp; Cloud</h3></div>
+                                <div class="sk-chips">
+                                    <span>IoT sensor pipelines</span>
+                                    <span>Weather / REST APIs</span>
+                                    <span>ETL &amp; data workflows</span>
+                                    <span>BigQuery</span>
+                                    <span>Spark / Hadoop</span>
+                                    <span>GCP</span>
+                                    <span>AWS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-pie-chart"></i></span><h3>Analytics, BI &amp; Visualisation</h3></div>
+                                <div class="sk-chips">
+                                    <span class="is-now">Plotly</span>
+                                    <span class="is-now">Interactive dashboards</span>
+                                    <span class="is-now">Dash</span>
                                     <span class="is-now">Survey data (DQQ)</span>
-                                    <span>Python &amp; SQL pipelines</span>
                                     <span>Power BI</span>
                                     <span>DAX</span>
                                     <span>Power Query</span>
                                     <span>Looker Studio</span>
-                                    <span>BigQuery</span>
                                     <span>Streamlit</span>
+                                    <span>Matplotlib / Seaborn</span>
                                     <span>Pandas / NumPy</span>
-                                    <span>AWS (Academy certified)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="sk-card reveal">
+                                <div class="sk-head"><span class="sk-icon"><i class="bi bi-rocket-takeoff"></i></span><h3>MLOps &amp; Deployment</h3></div>
+                                <div class="sk-chips">
+                                    <span class="is-now">Docker</span>
+                                    <span class="is-now">Hugging Face Spaces</span>
+                                    <span class="is-now">Load testing &amp; gunicorn tuning</span>
+                                    <span class="is-now">Caching &amp; compression</span>
+                                    <span class="is-now">Secrets via env variables</span>
+                                    <span>FastAPI</span>
+                                    <span>Kubernetes</span>
+                                    <span>Prometheus</span>
+                                    <span class="is-now">Git / GitHub</span>
+                                    <span>REST APIs</span>
+                                    <span>Cloud ML deployment</span>
                                 </div>
                             </div>
                         </div>
@@ -404,24 +412,12 @@
                                 <div class="sk-head"><span class="sk-icon"><i class="bi bi-people"></i></span><h3>Ways of Working</h3></div>
                                 <div class="sk-chips">
                                     <span class="is-now">Live stakeholder workshops</span>
+                                    <span>Decision-support design</span>
                                     <span class="is-now">Technical documentation</span>
-                                    <span class="is-now">Stakeholder requirements</span>
+                                    <span class="is-now">Stakeholder communication</span>
                                     <span class="is-now">Cross-functional collaboration</span>
-                                    <span>Agile</span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Certifications -->
-                    <div class="sk-certs mt-5">
-                        <h3 class="sk-certs-title"><span class="sk-icon"><i class="bi bi-patch-check"></i></span>Certifications</h3>
-                        <div class="sk-cert-list">
-                            <span>Python for Machine Learning &amp; Data Science Masterclass</span>
-                            <span>The Complete SQL Bootcamp</span>
-                            <span>A Crash Course in Data Science — Johns Hopkins University (Coursera)</span>
-                            <span>AWS Academy Data Analytics</span>
-                            <span>Foundations: Data, Data Everywhere — Google</span>
                         </div>
                     </div>
                 </section>
@@ -456,10 +452,10 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js?v=20261110b"></script>
+        <script src="js/scripts.js?v=20261110f"></script>
         <!-- 3D page-header scene + interaction effects-->
-        <script src="js/timeline.js?v=20261110b" defer></script>
-        <script type="module" src="js/hero-scene.js?v=20261110b"></script>
-        <script src="js/effects.js?v=20261110b" defer></script>
+        <script src="js/timeline.js?v=20261110f" defer></script>
+        <script type="module" src="js/hero-scene.js?v=20261110f"></script>
+        <script src="js/effects.js?v=20261110f" defer></script>
     </body>
 </html>

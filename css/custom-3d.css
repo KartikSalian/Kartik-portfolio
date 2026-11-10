@@ -1292,7 +1292,7 @@
 
 /* --- Part-time: peach --- */
 .tl-item.is-part .tl-card { background: var(--part-tile); color: var(--ink-soft); border-color: rgba(var(--peach-rgb), 0.9); }
-.tl-item.is-part .tl-node { background: var(--peach); color: var(--ink); }
+.tl-item.is-part .tl-node { background: var(--ink); color: var(--peach); }
 .is-part .tl-type { background: var(--peach); color: var(--ink); }
 .tl-item.is-part .tl-date,
 .tl-item.is-part .tl-role,
