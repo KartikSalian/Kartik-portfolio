@@ -47,6 +47,17 @@
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
 
+        // Headers slide up under the floating navbar (see .hero / .page-hero
+        // in custom-3d.css); give them the navbar's real height. Measured
+        // with the mobile menu closed so opening it doesn't shift the page.
+        var setNavHeight = function () {
+            var open = nav.querySelector(".navbar-collapse.show");
+            if (open) return;
+            document.documentElement.style.setProperty("--nav-h", nav.offsetHeight + "px");
+        };
+        setNavHeight();
+        window.addEventListener("resize", setNavHeight);
+
         // Mark the current page's nav link (gets the peach underline).
         var page = location.pathname.split("/").pop() || "index.html";
         nav.querySelectorAll(".nav-link").forEach(function (link) {

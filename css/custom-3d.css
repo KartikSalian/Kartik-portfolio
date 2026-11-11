@@ -373,7 +373,9 @@
 .theme-3d .hero {
     position: relative;
     overflow: hidden;
-    padding-top: 3rem;
+    /* extend up under the floating navbar so the heatmap starts at the very top */
+    margin-top: calc(-1 * var(--nav-h, 88px));
+    padding-top: calc(3rem + var(--nav-h, 88px)) !important;
     isolation: isolate;
 }
 
@@ -508,7 +510,9 @@
 .theme-3d .page-hero {
     position: relative;
     overflow: hidden;
-    padding: 4rem 0 2.75rem;
+    /* extend up under the floating navbar so the heatmap starts at the very top */
+    margin-top: calc(-1 * var(--nav-h, 88px));
+    padding: calc(4rem + var(--nav-h, 88px)) 0 2.75rem;
     isolation: isolate;
 }
 
@@ -2498,7 +2502,7 @@ textarea.ct-input {
 
     /* page headers */
     .theme-3d .page-hero {
-        padding: 2.25rem 0 1.75rem;
+        padding: calc(2.25rem + var(--nav-h, 80px)) 0 1.75rem;
     }
 
     .theme-3d .page-hero .display-5 {
@@ -2507,7 +2511,7 @@ textarea.ct-input {
 
     /* home hero */
     .theme-3d .hero {
-        padding-top: 1.25rem !important;
+        padding-top: calc(1.25rem + var(--nav-h, 80px)) !important;
         padding-bottom: 0 !important;
     }
 
