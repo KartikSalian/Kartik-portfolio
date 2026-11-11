@@ -1,12 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <defs>
-        <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#5b7cff" />
-            <stop offset="100%" stop-color="#ff3d9a" />
-        </linearGradient>
-    </defs>
-    <rect width="32" height="32" rx="8" fill="#060714" />
-    <rect width="32" height="32" rx="8" fill="url(#g)" fill-opacity="0.92" />
-    <text x="16" y="23" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="19"
-        fill="#ffffff" text-anchor="middle">K</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <!-- KS monogram: peach circle, indigo letters (matches the navbar logo) -->
+    <circle cx="32" cy="32" r="31" fill="#F5B69E" />
+    <circle cx="32" cy="32" r="29.5" fill="none" stroke="#E9E8F8" stroke-width="2" stroke-opacity="0.7" />
+    <text x="32" y="43" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-weight="800" font-size="30"
+        letter-spacing="-0.5" fill="#2A2B5F" text-anchor="middle">KS</text>
 </svg>
